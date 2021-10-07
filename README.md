@@ -1,1 +1,1 @@
-# GameDesignA1
+# Game Design Course
