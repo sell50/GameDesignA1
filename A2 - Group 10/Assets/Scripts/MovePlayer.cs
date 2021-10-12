@@ -6,33 +6,27 @@ using UnityEngine;
 public class MovePlayer : MonoBehaviour
 {
     private CharacterController controller;
-    private Rigidbody rb;
 
     public float playerSpeed = 6.0f;
+    private Vector3 playerVelocity;
 
     private float gravity = -9.81f;
 
     private float turnSmoothTime = 0.1f;
 
     private float turnSmoothVelocity;
-    private float jumpHeight = 3.0f;
+    private float jumpHeight = 5.0f;
     private bool jump;
 
     private void Start()
     {
         controller = GetComponent<CharacterController>();
-        rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
-        if (controller.isGrounded && Input.GetButton("Jump"))
-        {
-            jump = true;
-        }
-        
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
+        var horizontal = Input.GetAxisRaw("Horizontal");
+        var vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
         if (direction.magnitude >= 0.1)
         {
@@ -43,14 +37,13 @@ public class MovePlayer : MonoBehaviour
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * playerSpeed * Time.deltaTime);
         }
-    }
-
-    private void FixedUpdate()
-    {
-        if (jump)
+        
+        if (Input.GetButtonDown("Jump"))
         {
-            rb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
-            jump = false;
+            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravity);
         }
+
+        playerVelocity.y += gravity * Time.deltaTime;
+        controller.Move(playerVelocity * Time.deltaTime);
     }
 }
