@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class FollowPlayer : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Transform playerCharacter;
+    public Vector3 offset;
+
     void Start()
     {
-        
+        //offset = transform.position - playerCharacter.transform.position;
+        offset = new Vector3(0, 10, -10);
     }
 
-    // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        
+        transform.position = playerCharacter.transform.position + offset;
+        transform.LookAt(playerCharacter);
     }
 }
