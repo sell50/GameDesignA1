@@ -412,7 +412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2178152308945942256, guid: 2be3c653312ba7048a9665fb1e733cf7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 2178152308945942256, guid: 2be3c653312ba7048a9665fb1e733cf7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -454,9 +454,21 @@ PrefabInstance:
       propertyPath: m_SkinWidth
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 2178152308945942259, guid: 2be3c653312ba7048a9665fb1e733cf7, type: 3}
+      propertyPath: playerSpeed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2178152308945942260, guid: 2be3c653312ba7048a9665fb1e733cf7, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2178152309103816883, guid: 2be3c653312ba7048a9665fb1e733cf7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6a13a8424e156f44c95d920c53d4c3e8, type: 2}
+    - target: {fileID: 2178152310766496124, guid: 2be3c653312ba7048a9665fb1e733cf7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b6b5c0ce225ab74f8202b028f9a0c0c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2be3c653312ba7048a9665fb1e733cf7, type: 3}
