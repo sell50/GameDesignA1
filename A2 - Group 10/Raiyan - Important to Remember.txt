@@ -1,0 +1,17 @@
+Script Name: FollowPlayer.cs
+Game Object: Main Camera
+Discrepancies: Need to add player object 
+
+Script Name: PlayerDeath.cs
+Game Object: Player
+Discrepancies: Need to add player object 
+
+Script Name: MoveDeathZone.cs
+Game Object: Death Zone Move
+Discrepancies: None
+
+>>Death Zones need to have the death Zone tag
+
+Script Name: 
+Game Object:
+Discrepancies:
