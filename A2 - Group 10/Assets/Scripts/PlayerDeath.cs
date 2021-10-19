@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlayerDeath : MonoBehaviour
 {
     public Vector3 reset;
-    public CharacterController controller;
-
+    //public Tr controller;
 
     void Start()
     {
@@ -17,9 +16,9 @@ public class PlayerDeath : MonoBehaviour
     {
         if (other.gameObject.CompareTag("DeathFloor"))
         {
-            controller.enabled = false;
+            transform.gameObject.SetActive(false);
             transform.position = reset;
-            controller.enabled = true;
+            transform.gameObject.SetActive(true);
         }
 
     }

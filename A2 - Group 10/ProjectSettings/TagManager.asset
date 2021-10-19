@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - DeathFloor
+  - Ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Structure
   - Water
   - UI
   - 
