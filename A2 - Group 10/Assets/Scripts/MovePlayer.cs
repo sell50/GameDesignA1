@@ -8,7 +8,7 @@ public class MovePlayer : MonoBehaviour
 {
     private Rigidbody rb;
 
-    private const float PlayerSpeed = 20.0f;
+    private const float PlayerSpeed = 80.0f;
     private float jumpHeight = 6.0f;
 
     private Vector3 playerVelocity;
