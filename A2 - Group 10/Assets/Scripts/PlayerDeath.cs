@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerDeath : MonoBehaviour
 {
     public Vector3 reset;
-    //public Tr controller;
 
     void Start()
     {
