@@ -25,9 +25,6 @@
 /[Aa]ssets/LogFile.txt
 /[Aa]ssets/LogFile.txt.meta
 
-# TextMesh Pro files
-[Aa]ssets/TextMesh*Pro/
-
 # Jetbrain Rider Cache
 .idea/
 
