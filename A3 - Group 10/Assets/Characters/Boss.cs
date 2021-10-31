@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Security.Cryptography;
+using UnityEngine;
 
 namespace Characters
 {
@@ -7,22 +8,16 @@ namespace Characters
         void Start()
         {
             health = 5000;
-            
-        }
-
-
-        void Update()
-        {
-        
         }
 
         public override void DealDamage(BasicCharacter opponent)
         {
             if (opponent is Warrior)
             {
-                //create randomNumGen for damage
-                opponent.ReduceHealth(0);
+                var damage = Random.Range(40, 50);
+                opponent.ReduceHealth(damage);
             }
+            //TODO include damage to damage-dealers and healer when I have access to those characters 
         }
     }
 }

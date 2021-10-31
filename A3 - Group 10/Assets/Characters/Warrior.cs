@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Characters
 {
     public class Warrior : BasicCharacter
@@ -6,16 +8,14 @@ namespace Characters
         {
             health = 3000;
         }
-        
-        void Update()
-        {
-        
-        }
 
         public override void DealDamage(BasicCharacter opponent)
         {
-            throw new System.NotImplementedException();
+            if (opponent is Boss)
+            {
+                var damage = Random.Range(5, 10);
+                opponent.ReduceHealth(damage);
+            }
         }
-        
     }
 }
