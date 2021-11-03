@@ -12,13 +12,18 @@ namespace Characters
 
         public override void DealDamage(BasicCharacter opponent)
         {
+            var damage = 0;
             if (opponent is Warrior)
             {
-                opponent.ReduceHealth(Random.Range(40, 50));
+                damage = Random.Range(40, 50);
+                opponent.ReduceHealth(damage);
             } else if (opponent is Rogue || opponent is Mage || opponent is MoonkinDruid || opponent is Priest)
             {
-                opponent.ReduceHealth(Random.Range(5, 20));
+                damage = Random.Range(5, 20);
+                opponent.ReduceHealth(damage);
             }
+
+            totalDamageDone += damage;
         }
     }
 }

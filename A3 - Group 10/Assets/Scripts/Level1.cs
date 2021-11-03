@@ -70,12 +70,12 @@ using Characters;
 
             if (boss.health == 0 || mage.health == 0 || md.health == 0 || war.health == 0 || pri.health == 0 || rog.health == 0)
             {
-                boss.gameObject.SetActive(false);
+                /*boss.gameObject.SetActive(false);
                 mage.gameObject.SetActive(false);
                 md.gameObject.SetActive(false);
                 rog.gameObject.SetActive(false);
                 war.gameObject.SetActive(false);
-                pri.gameObject.SetActive(false);
+                pri.gameObject.SetActive(false);*/
             }
 
             //if (boss.GetTotalDamage() > highscore)
