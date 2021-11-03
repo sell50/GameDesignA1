@@ -13,7 +13,7 @@ namespace Characters
         public void ReduceHealth(int damageDealt)
         {
             health -= damageDealt;
-            totalDamage += damage;
+            totalDamage += damageDealt;
         }
 
         public void IncreaseHealth(int hpHealed)

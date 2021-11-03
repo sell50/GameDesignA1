@@ -8,7 +8,6 @@ namespace Characters
 {
     public class Level2 : BasicCharacter
     {
-
         public Text healthBoss, healthMage, healthWarrior, healthMD;
         Boss boss = new Boss();
         MoonkinDruid md = new MoonkinDruid();
