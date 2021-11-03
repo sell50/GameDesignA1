@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 namespace Characters
 {
-    public class Level2 : BasicCharacter
+    public class Level1 : BasicCharacter
     {
 
-        public Text healthBoss, healthMage, healthWarrior, healthMD, healthRog, health Prist;
+        public Text healthBoss, healthMage, healthWarrior, healthMD, healthRog, healthPriest;
         Boss boss = new Boss();
         MoonkinDruid md = new MoonkinDruid();
         Mage mage = new Mage();
@@ -25,7 +25,7 @@ namespace Characters
             healthMD.text = "Moonkin Druid: " + md.health + "\nDamage: ";
             healthWarrior.text = "Warrior: " + war.health + "\nDamage: ";
             healthRog.text = "Rogue: " + rog.health + "\nDamage: ";
-            healthPri.text = "Priest: " + pri.health;
+            healthPriest.text = "Priest: " + pri.health;
 
             boss.DealDamage(mage);
             boss.DealDamage(md);
@@ -41,18 +41,18 @@ namespace Characters
 
             if (boss.health == 0 || mage.health == 0 || md.health == 0 || war.health == 0)
             {
-                boss.GameObject.SetActive(false);
-                mage.GameObject.SetActive(false);
-                md.GameObject.SetActive(false);
-                rog.GameObject.SetActive(false);
-                war.GameObject.SetActive(false);
-                pri.GameObject.SetActive(false);
+                boss.gameObject.SetActive(false);
+                mage.gameObject.SetActive(false);
+                md.gameObject.SetActive(false);
+                rog.gameObject.SetActive(false);
+                war.gameObject.SetActive(false);
+                pri.gameObject.SetActive(false);
             }
 
-            if (boss.GetTotalDamage() > highscore)
+            /*if (boss.GetTotalDamage() > highscore)
             {
                 //PlayerPrefs.SetInt("highscore", boss.GetTotalDamage());
-            }
+            }*/
         }
     }
 }

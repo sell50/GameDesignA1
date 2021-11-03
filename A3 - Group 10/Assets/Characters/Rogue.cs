@@ -5,7 +5,7 @@ namespace Characters
     public class Rogue : BasicCharacter
     {
         // Start is called before the first frame update
-        void Start()
+        public Rogue()
         {
             health = 1500;
         }

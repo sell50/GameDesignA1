@@ -7,7 +7,7 @@ namespace Characters
         public int health;
         public int mana;
         public int damage, totalDamage = 0;
-        
+
         public virtual void DealDamage(BasicCharacter opponent) { }
 
         public void ReduceHealth(int damageDealt)

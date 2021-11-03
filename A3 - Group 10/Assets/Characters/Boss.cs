@@ -5,7 +5,7 @@ namespace Characters
 {
     public class Boss : BasicCharacter
     {
-        void Start()
+        public Boss()
         {
             health = 5000;
         }

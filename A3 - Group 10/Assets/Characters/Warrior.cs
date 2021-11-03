@@ -4,7 +4,7 @@ namespace Characters
 {
     public class Warrior : BasicCharacter
     {
-        void Start()
+        public Warrior()
         {
             health = 3000;
         }
@@ -13,8 +13,7 @@ namespace Characters
         {
             if (opponent is Boss)
             {
-                var damage = Random.Range(5, 10);
-                opponent.ReduceHealth(damage);
+                opponent.ReduceHealth(Random.Range(5, 10));
             }
         }
     }

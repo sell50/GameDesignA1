@@ -121,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 242955093016411428, guid: c7c85ca4eb3e18241bd3945f19e87cd3, type: 3}
         m_TargetAssemblyTypeName: BackToMain, Assembly-CSharp
         m_MethodName: BackToMainMenu
         m_Mode: 1

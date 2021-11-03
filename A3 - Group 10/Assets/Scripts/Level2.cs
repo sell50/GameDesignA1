@@ -14,7 +14,7 @@ namespace Characters
         MoonkinDruid md = new MoonkinDruid();
         Mage mage = new Mage();
         Warrior war = new Warrior();
-        PlayerPrefs.SetInt("highscore", 0);
+        PlayerPrefs.SetInt("highscore", 0); 
 
         void Update()
         {
