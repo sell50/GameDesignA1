@@ -6,14 +6,14 @@ namespace Characters
     {
         public int health;
         public int mana;
-        public int damage, totalDamage = 0;
+        public int damage, totalDamageTaken, totalDamageDone;
 
         public virtual void DealDamage(BasicCharacter opponent) { }
 
         public void ReduceHealth(int damageDealt)
         {
             health -= damageDealt;
-            totalDamage += damageDealt;
+            totalDamageTaken += damageDealt;
         }
 
         public void IncreaseHealth(int hpHealed)
@@ -21,10 +21,14 @@ namespace Characters
             health += hpHealed;
         }
 
-        public int GetTotalDamage()
+        public int GetTotalDamageTaken()
         {
-            
-            return totalDamage;
+            return totalDamageTaken;
+        }
+
+        public int GetTotalDamageDone()
+        {
+            return totalDamageDone;
         }
     }
 }

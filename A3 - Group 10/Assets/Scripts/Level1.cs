@@ -16,15 +16,16 @@ using Characters;
         Rogue rog = new Rogue();
         Priest pri = new Priest();
         //PlayerPrefs.SetInt("highscore", 0);
+        
 
         void Update()
         {
-            healthBoss.text = "Boss: " + boss.health + "\nDamage: " + boss.GetTotalDamage();
-            healthMage.text = "Mage: " + mage.health + "\nDamage: " + mage.GetTotalDamage();
+            healthBoss.text = "Boss: " + boss.health + "\nDamage: " + boss.GetTotalDamageTaken();
+            healthMage.text = "Mage: " + mage.health + "\nDamage: " + mage.GetTotalDamageTaken();
             healthMD.text = "Moonkin Druid: " + md.health + "\nDamage: ";
             healthWarrior.text = "Warrior: " + war.health + "\nDamage: ";
             healthRog.text = "Rogue: " + rog.health + "\nDamage: ";
-            healthPriest.text = "Priest: " + pri.health;
+            healthPri.text = "Priest: " + pri.health;
 
             boss.DealDamage(mage);
             boss.DealDamage(md);
