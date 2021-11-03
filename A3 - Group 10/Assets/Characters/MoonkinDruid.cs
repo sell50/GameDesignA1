@@ -4,7 +4,6 @@ namespace Characters
 {
     public class MoonkinDruid : BasicCharacter
     {
-        private int damage = 0;
 
         void Start()
         {
@@ -15,8 +14,8 @@ namespace Characters
         {
             if (opponent is Boss)
             {
-                damage = Random.Range(5, 15);
-                opponent.ReduceHealth(damage);
+                
+                opponent.ReduceHealth(Random.Range(5, 15));
             }
         }
     }
