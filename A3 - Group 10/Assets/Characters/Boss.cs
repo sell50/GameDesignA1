@@ -14,10 +14,11 @@ namespace Characters
         {
             if (opponent is Warrior)
             {
-                var damage = Random.Range(40, 50);
-                opponent.ReduceHealth(damage);
+                opponent.ReduceHealth(Random.Range(40, 50));
+            } else if (opponent is Rogue || opponent is Mage || opponent is MoonkinDruid || opponent is Priest)
+            {
+                opponent.ReduceHealth(Random.Range(5, 20));
             }
-            //TODO include damage to damage-dealers and healer when I have access to those characters 
         }
     }
 }
