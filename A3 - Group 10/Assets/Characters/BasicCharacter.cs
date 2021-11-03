@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Characters
 {
-    public class BasicCharacter : MonoBehaviour
+    public class BasicCharacter
     {
         public int health;
         public int mana;
