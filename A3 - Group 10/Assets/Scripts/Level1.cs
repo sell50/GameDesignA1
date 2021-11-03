@@ -4,10 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using Characters;
 
-
-//namespace Characters
-//{
     public class Level1 : MonoBehaviour
     {
         public TMP_Text healthBoss, healthMage, healthWarrior, healthMD, healthRog, healthPri;
@@ -40,49 +38,48 @@ using System;
             rog.DealDamage(boss);
             pri.DealDamage(boss);
 
-            var chooseCharacter = Random.Range(1, 6);
-
+            var chooseCharacter = UnityEngine.Random.Range(1, 6);
+        
             if (chooseCharacter == 1 || chooseCharacter == 2)
             {
-                SmallHeal(pri);
+                pri.SmallHeal(pri);
             }
 
             if (chooseCharacter == 3)
             {
-                SmallHeal(war);
+                pri.SmallHeal(war);
             }
 
             if (chooseCharacter == 4)
             {
-                SmallHeal(rog);
+                pri.SmallHeal(rog);
             }
 
             if (chooseCharacter == 5)
             {
-                SmallHeal(mage);
+                pri.SmallHeal(mage);
             }
 
             if (chooseCharacter == 6)
             {
-                SmallHeal(md);
+                pri.SmallHeal(md);
             }
 
-            BigHeal(war);
+            pri.BigHeal(war);
 
             if (boss.health == 0 || mage.health == 0 || md.health == 0 || war.health == 0 || pri.health == 0 || rog.health == 0)
             {
                 boss.gameObject.SetActive(false);
                 mage.gameObject.SetActive(false);
-                md.GameObject.SetActive(false);
+                md.gameObject.SetActive(false);
                 rog.gameObject.SetActive(false);
                 war.gameObject.SetActive(false);
                 pri.gameObject.SetActive(false);
             }
 
-            if (boss.GetTotalDamage() > highscore)
-            {
-                //PlayerPrefs.SetInt("highscore", boss.GetTotalDamage());
-            }
+            //if (boss.GetTotalDamage() > highscore)
+            //{
+            //    //PlayerPrefs.SetInt("highscore", boss.GetTotalDamage());
+            //}
         }
     }
-//}
