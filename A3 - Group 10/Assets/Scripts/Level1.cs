@@ -16,11 +16,11 @@ namespace Characters
         Warrior war = new Warrior();
         Rogue rog = new Rogue();
         Priest pri = new Priest();
-        //PlayerPrefs.SetInt("highscore", 0);
+        PlayerPrefs.SetInt("highscore", 0);
 
         void Update()
         {
-            healthBoss.text = "Boss: " + boss.health + "\nDamage: ";
+            healthBoss.text = "Boss: " + boss.health + "\nDamage: " + boss.GetTotalDamage();
             healthMage.text = "Mage: " + mage.health + "\nDamage: " + mage.GetTotalDamage();
             healthMD.text = "Moonkin Druid: " + md.health + "\nDamage: ";
             healthWarrior.text = "Warrior: " + war.health + "\nDamage: ";
@@ -43,7 +43,7 @@ namespace Characters
             {
                 boss.gameObject.SetActive(false);
                 mage.gameObject.SetActive(false);
-                md.gameObject.SetActive(false);
+                md.GameObject.SetActive(false);
                 rog.gameObject.SetActive(false);
                 war.gameObject.SetActive(false);
                 pri.gameObject.SetActive(false);

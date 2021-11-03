@@ -5,7 +5,7 @@ namespace Characters
     public class Priest : BasicCharacter
     {
 
-        void Start()
+        public Priest()
         {
             health = 900;
             mana = 1000;
@@ -19,7 +19,7 @@ namespace Characters
 
                 var chooseCharacter = Random.Range(1, 6);
 
-                /*if (chooseCharacter == 1 || chooseCharacter == 2)
+                if (chooseCharacter == 1 || chooseCharacter == 2)
                 {
                     SmallHeal(Priest);
                 }
@@ -43,7 +43,7 @@ namespace Characters
                 {
                     SmallHeal(Moonkin);
                 }
-                */
+                
                 mana += 3;
 
                 
