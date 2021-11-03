@@ -7,18 +7,21 @@ namespace Characters
 {
     public class Mage : BasicCharacter
     {
-        void Start()
+        public Mage()
         {
             health = 1000;
         }
 
         public override void DealDamage(BasicCharacter opponent)
         {
+            var damage = 0;
             if(opponent is Boss)
             {
-                int damage = Random.Range(5, 30);
+                damage = Random.Range(5, 30);
                 opponent.ReduceHealth(damage);
             }
+
+            totalDamageDone += damage;
         }
     }
 }

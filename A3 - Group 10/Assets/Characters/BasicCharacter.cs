@@ -6,7 +6,7 @@ namespace Characters
     {
         public int health;
         public int mana;
-        public int damage, totalDamageTaken, totalDamageDone;
+        public int totalDamageTaken, totalDamageDone;
 
         public virtual void DealDamage(BasicCharacter opponent) { }
 
