@@ -12,10 +12,14 @@ namespace Characters
 
         public override void DealDamage(BasicCharacter opponent)
         {
+            var damage = 0;
             if (opponent is Boss)
             {
-                opponent.ReduceHealth(Random.Range(15, 25));
+                damage = Random.Range(15, 25);
+                opponent.ReduceHealth(damage);
             }
+
+            totalDamageDone += damage;
         }
     }
 }
