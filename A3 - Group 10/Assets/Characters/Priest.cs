@@ -27,5 +27,7 @@ namespace Characters
                 mana -= 10;
             }
         }
+
+
     }
 }
