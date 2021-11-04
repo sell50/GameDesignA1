@@ -37,9 +37,25 @@ using Characters;
                 rogue.DealDamage(boss);
                 if (boss.health <= 0 || mage.health <= 0 || md.health <= 0 || war.health <= 0 || priest.health <= 0 || rogue.health <= 0)
                 {
-                        PlayerPrefs.SetInt("L2TotalDamageToBoss", boss.GetTotalDamageTaken());
-                        PlayerPrefs.SetInt("L2TotalDamageToParty", boss.GetTotalDamageDone());
-                        PlayerPrefs.Save();
+                        if (PlayerPrefs.HasKey("L2TotalDamageToBoss") && PlayerPrefs.HasKey("L2TotalDamageToParty"))
+                        {
+                            if (PlayerPrefs.GetInt("L2TotalDamageToBoss") < boss.GetTotalDamageTaken())
+                            {
+                                PlayerPrefs.SetInt("L2TotalDamageToBoss", boss.GetTotalDamageTaken());
+                            }
+
+                            if (PlayerPrefs.GetInt("L2TotalDamageToParty") < boss.GetTotalDamageDone())
+                            {
+                                PlayerPrefs.SetInt("L2TotalDamageToParty", boss.GetTotalDamageDone());
+                            }
+                            PlayerPrefs.Save();
+                        }
+                        else
+                        {
+                            PlayerPrefs.SetInt("L2TotalDamageToBoss", boss.GetTotalDamageTaken());
+                            PlayerPrefs.SetInt("L2TotalDamageToParty", boss.GetTotalDamageDone());
+                            PlayerPrefs.Save();
+                        }
                         running = false;
                 }
 
