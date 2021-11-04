@@ -76,7 +76,10 @@ using Characters;
     void CSVWriter()
     {
 
-        
+        if (timestep==1 && File.Exists("Level2.csv"))
+        {
+            File.Delete("Level2.csv");
+        }
         string filename = "Level2.csv";
         TextWriter tw = new StreamWriter(filename, true);
 
