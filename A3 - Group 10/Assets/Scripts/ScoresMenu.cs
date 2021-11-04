@@ -20,7 +20,7 @@ public class ScoresMenu : MonoBehaviour
         L2PartyToBoss.text = PlayerPrefs.GetInt("L2TotalDamageToBoss").ToString();
         L3PartyToBoss.text = PlayerPrefs.GetInt("L3TotalDamageToBoss").ToString();
 
-        //Level 3
+        /*//Level 3
         if (PlayerPrefs.HasKey("L3TotalDamageToBoss") && PlayerPrefs.HasKey("L3TotalDamageToParty"))
         {
             if (PlayerPrefs.GetInt("L3TotalDamageToBoss") < boss.GetTotalDamageTaken())
@@ -81,7 +81,7 @@ public class ScoresMenu : MonoBehaviour
             PlayerPrefs.SetInt("L1TotalDamageToBoss", boss.GetTotalDamageTaken());
             PlayerPrefs.SetInt("L1TotalDamageToParty", boss.GetTotalDamageDone());
             PlayerPrefs.Save();
-        }
+        }*/
         
     }
 }
