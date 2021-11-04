@@ -86,23 +86,23 @@ public class Level3 : MonoBehaviour
         if (boss.health <= 0 || mage.health <= 0 || moon.health <= 0 || war.health <= 0 || priest.health <= 0 || rog.health <= 0)
         {
             //Scores
-            if (PlayerPrefs.HasKey("L1TotalDamageToBoss") && PlayerPrefs.HasKey("L1TotalDamageToParty"))
+            if (PlayerPrefs.HasKey("L3TotalDamageToBoss") && PlayerPrefs.HasKey("L3TotalDamageToParty"))
             {
-                if (PlayerPrefs.GetInt("L1TotalDamageToBoss") < boss.GetTotalDamageTaken())
+                if (PlayerPrefs.GetInt("L3TotalDamageToBoss") < boss.GetTotalDamageTaken())
                 {
-                    PlayerPrefs.SetInt("L1TotalDamageToBoss", boss.GetTotalDamageTaken());
+                    PlayerPrefs.SetInt("L3TotalDamageToBoss", boss.GetTotalDamageTaken());
                 }
 
-                if (PlayerPrefs.GetInt("L1TotalDamageToParty") < boss.GetTotalDamageDone())
+                if (PlayerPrefs.GetInt("L3TotalDamageToParty") < boss.GetTotalDamageDone())
                 {
-                    PlayerPrefs.SetInt("L1TotalDamageToParty", boss.GetTotalDamageDone());
+                    PlayerPrefs.SetInt("L3TotalDamageToParty", boss.GetTotalDamageDone());
                 }
                 PlayerPrefs.Save();
             }
             else
             {
-                PlayerPrefs.SetInt("L1TotalDamageToBoss", boss.GetTotalDamageTaken());
-                PlayerPrefs.SetInt("L1TotalDamageToParty", boss.GetTotalDamageDone());
+                PlayerPrefs.SetInt("L3TotalDamageToBoss", boss.GetTotalDamageTaken());
+                PlayerPrefs.SetInt("L3TotalDamageToParty", boss.GetTotalDamageDone());
                 PlayerPrefs.Save();
             }
             enabled = false;
