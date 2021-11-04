@@ -5,7 +5,7 @@ namespace Characters
     public class MoonkinDruid : BasicCharacter
     {
 
-        MoonkinDruid()
+        public MoonkinDruid()
         {
             health = 1250;
         }
