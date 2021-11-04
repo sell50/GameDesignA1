@@ -11,9 +11,8 @@ public class ScoresMenu : MonoBehaviour
     //the level scores 
     void Start()
     {
-        var boss = new Boss();
         L1BossToParty.text = PlayerPrefs.GetInt("L1TotalDamageToParty").ToString();
-        L2BossToParty.text = PlayerPrefs.GetInt("L2TotalDamagetoParty").ToString();
+        L2BossToParty.text = PlayerPrefs.GetInt("L2TotalDamageToParty").ToString();
         L3BossToParty.text = PlayerPrefs.GetInt("L3TotalDamageToParty").ToString();
 
         L1PartyToBoss.text = PlayerPrefs.GetInt("L1TotalDamageToBoss").ToString();
