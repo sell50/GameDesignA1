@@ -5,6 +5,9 @@ namespace Characters
 {
     public class Boss : BasicCharacter
     {
+        int damageStep=0;
+
+
         public Boss()
         {
             health = 5000;
@@ -24,6 +27,19 @@ namespace Characters
             }
 
             totalDamageDone += damage;
+            DamagePerStep(damage);
         }
+
+ 
+        public void DamagePerStep(int dmg) {damageStep += dmg;}
+        public void CleanDamagePerStep() { damageStep = 0; }
+
+
+        public void DealDamagePerStep(BasicCharacter opponent) {
+           
+           opponent.ReduceHealth(damageStep/100);
+            
+        }
+
     }
 }
