@@ -21,11 +21,11 @@ using System.IO;
 
     void Update()
     {
-        healthBoss.text = "Boss: " + boss.health + "\nDamage: " + boss.totalDamageDone;
-        healthMage.text = "Mage: " + mage.health + "\nDamage: " + mage.totalDamageDone;
-        healthMD.text = "Moonkin Druid: " + md.health + "\nDamage: " + md.totalDamageDone; ;
-        healthWarrior.text = "Warrior: " + war.health + "\nDamage: " + war.totalDamageDone; ;
-        healthRog.text = "Rogue: " + rog.health + "\nDamage: " + rog.totalDamageDone; ;
+        healthBoss.text = "Boss: " + boss.health + " Damage: " + boss.GetTotalDamageTaken();
+        healthMage.text = "Mage: " + mage.health + " Damage: " + mage.GetTotalDamageTaken();
+        healthMD.text = "Moonkin Druid: " + md.health + " Damage: " + md.GetTotalDamageTaken(); ;
+        healthWarrior.text = "Warrior: " + war.health + " Damage: " + war.GetTotalDamageTaken(); ;
+        healthRog.text = "Rogue: " + rog.health + " Damage: " + rog.GetTotalDamageTaken(); ;
         healthPri.text = "Priest: " + pri.health;
 
         boss.DealDamage(mage);
@@ -69,8 +69,9 @@ using System.IO;
 
         pri.BigHeal(war);
 
-        if (boss.health == 0 || mage.health == 0 || md.health == 0 || war.health == 0 || pri.health == 0 || rog.health == 0)
+        if (boss.health <= 0 || mage.health <= 0 || md.health <= 0 || war.health <= 0 || pri.health <= 0 || rog.health <= 0)
         {
+            //Scores
             if (PlayerPrefs.HasKey("L1TotalDamageToBoss") && PlayerPrefs.HasKey("L1TotalDamageToParty"))
             {
                 if (PlayerPrefs.GetInt("L1TotalDamageToBoss") < boss.GetTotalDamageTaken())
@@ -90,6 +91,7 @@ using System.IO;
                 PlayerPrefs.SetInt("L1TotalDamageToParty", boss.GetTotalDamageDone());
                 PlayerPrefs.Save();
             }
+            enabled = false;
         }
 
         CSVWriter();
