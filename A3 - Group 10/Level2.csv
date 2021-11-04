@@ -1,0 +1,511 @@
+Timestep,1
+Boss,4944
+Warrior,2959
+Rogue,1495
+Mage,993
+Moonkin Druid,1239
+Priest,882
+Timestep,2
+Boss,4886
+Warrior,2913
+Rogue,1478
+Mage,986
+Moonkin Druid,1233
+Priest,865
+Timestep,3
+Boss,4826
+Warrior,2871
+Rogue,1473
+Mage,976
+Moonkin Druid,1225
+Priest,857
+Timestep,4
+Boss,4772
+Warrior,2823
+Rogue,1467
+Mage,960
+Moonkin Druid,1208
+Priest,842
+Timestep,5
+Boss,4707
+Warrior,2778
+Rogue,1459
+Mage,949
+Moonkin Druid,1199
+Priest,826
+Timestep,6
+Boss,4634
+Warrior,2738
+Rogue,1440
+Mage,944
+Moonkin Druid,1182
+Priest,810
+Timestep,7
+Boss,4593
+Warrior,2694
+Rogue,1428
+Mage,935
+Moonkin Druid,1175
+Priest,801
+Timestep,8
+Boss,4542
+Warrior,2652
+Rogue,1412
+Mage,930
+Moonkin Druid,1157
+Priest,792
+Timestep,9
+Boss,4484
+Warrior,2605
+Rogue,1405
+Mage,924
+Moonkin Druid,1147
+Priest,780
+Timestep,10
+Boss,4435
+Warrior,2558
+Rogue,1396
+Mage,919
+Moonkin Druid,1132
+Priest,770
+Timestep,11
+Boss,4372
+Warrior,2518
+Rogue,1387
+Mage,907
+Moonkin Druid,1124
+Priest,760
+Timestep,12
+Boss,4320
+Warrior,2477
+Rogue,1374
+Mage,892
+Moonkin Druid,1109
+Priest,748
+Timestep,13
+Boss,4263
+Warrior,2432
+Rogue,1361
+Mage,884
+Moonkin Druid,1090
+Priest,737
+Timestep,14
+Boss,4205
+Warrior,2385
+Rogue,1347
+Mage,871
+Moonkin Druid,1075
+Priest,723
+Timestep,15
+Boss,4160
+Warrior,2343
+Rogue,1337
+Mage,860
+Moonkin Druid,1069
+Priest,704
+Timestep,16
+Boss,4103
+Warrior,2298
+Rogue,1318
+Mage,852
+Moonkin Druid,1063
+Priest,695
+Timestep,17
+Boss,4041
+Warrior,2256
+Rogue,1307
+Mage,836
+Moonkin Druid,1051
+Priest,684
+Timestep,18
+Boss,3987
+Warrior,2214
+Rogue,1290
+Mage,820
+Moonkin Druid,1044
+Priest,675
+Timestep,19
+Boss,3940
+Warrior,2171
+Rogue,1280
+Mage,815
+Moonkin Druid,1033
+Priest,669
+Timestep,20
+Boss,3883
+Warrior,2127
+Rogue,1275
+Mage,803
+Moonkin Druid,1016
+Priest,662
+Timestep,21
+Boss,3818
+Warrior,2085
+Rogue,1270
+Mage,790
+Moonkin Druid,997
+Priest,644
+Timestep,22
+Boss,3762
+Warrior,2038
+Rogue,1253
+Mage,772
+Moonkin Druid,978
+Priest,634
+Timestep,23
+Boss,3718
+Warrior,1998
+Rogue,1237
+Mage,754
+Moonkin Druid,966
+Priest,622
+Timestep,24
+Boss,3663
+Warrior,1958
+Rogue,1232
+Mage,735
+Moonkin Druid,957
+Priest,613
+Timestep,25
+Boss,3613
+Warrior,1914
+Rogue,1218
+Mage,718
+Moonkin Druid,938
+Priest,599
+Timestep,26
+Boss,3565
+Warrior,1873
+Rogue,1205
+Mage,699
+Moonkin Druid,925
+Priest,580
+Timestep,27
+Boss,3505
+Warrior,1824
+Rogue,1191
+Mage,683
+Moonkin Druid,915
+Priest,570
+Timestep,28
+Boss,3447
+Warrior,1784
+Rogue,1186
+Mage,672
+Moonkin Druid,903
+Priest,551
+Timestep,29
+Boss,3413
+Warrior,1737
+Rogue,1172
+Mage,663
+Moonkin Druid,893
+Priest,535
+Timestep,30
+Boss,3357
+Warrior,1695
+Rogue,1156
+Mage,655
+Moonkin Druid,878
+Priest,521
+Timestep,31
+Boss,3302
+Warrior,1652
+Rogue,1139
+Mage,641
+Moonkin Druid,860
+Priest,508
+Timestep,32
+Boss,3248
+Warrior,1610
+Rogue,1125
+Mage,627
+Moonkin Druid,843
+Priest,489
+Timestep,33
+Boss,3189
+Warrior,1563
+Rogue,1106
+Mage,615
+Moonkin Druid,835
+Priest,472
+Timestep,34
+Boss,3147
+Warrior,1518
+Rogue,1100
+Mage,600
+Moonkin Druid,820
+Priest,458
+Timestep,35
+Boss,3090
+Warrior,1485
+Rogue,1087
+Mage,593
+Moonkin Druid,815
+Priest,448
+Timestep,36
+Boss,3053
+Warrior,1460
+Rogue,1079
+Mage,586
+Moonkin Druid,805
+Priest,440
+Timestep,37
+Boss,2994
+Warrior,1430
+Rogue,1063
+Mage,580
+Moonkin Druid,792
+Priest,423
+Timestep,38
+Boss,2922
+Warrior,1401
+Rogue,1051
+Mage,573
+Moonkin Druid,781
+Priest,405
+Timestep,39
+Boss,2866
+Warrior,1375
+Rogue,1043
+Mage,564
+Moonkin Druid,774
+Priest,396
+Timestep,40
+Boss,2825
+Warrior,1345
+Rogue,1028
+Mage,549
+Moonkin Druid,757
+Priest,389
+Timestep,41
+Boss,2780
+Warrior,1319
+Rogue,1014
+Mage,534
+Moonkin Druid,738
+Priest,382
+Timestep,42
+Boss,2720
+Warrior,1291
+Rogue,1009
+Mage,529
+Moonkin Druid,721
+Priest,373
+Timestep,43
+Boss,2679
+Warrior,1262
+Rogue,994
+Mage,511
+Moonkin Druid,710
+Priest,359
+Timestep,44
+Boss,2622
+Warrior,1235
+Rogue,977
+Mage,494
+Moonkin Druid,694
+Priest,351
+Timestep,45
+Boss,2554
+Warrior,1204
+Rogue,965
+Mage,486
+Moonkin Druid,681
+Priest,345
+Timestep,46
+Boss,2508
+Warrior,1177
+Rogue,954
+Mage,467
+Moonkin Druid,670
+Priest,334
+Timestep,47
+Boss,2446
+Warrior,1144
+Rogue,947
+Mage,458
+Moonkin Druid,658
+Priest,315
+Timestep,48
+Boss,2387
+Warrior,1112
+Rogue,938
+Mage,444
+Moonkin Druid,647
+Priest,296
+Timestep,49
+Boss,2339
+Warrior,1084
+Rogue,930
+Mage,427
+Moonkin Druid,636
+Priest,280
+Timestep,50
+Boss,2287
+Warrior,1053
+Rogue,920
+Mage,410
+Moonkin Druid,617
+Priest,270
+Timestep,51
+Boss,2226
+Warrior,1028
+Rogue,909
+Mage,402
+Moonkin Druid,609
+Priest,258
+Timestep,52
+Boss,2164
+Warrior,999
+Rogue,900
+Mage,384
+Moonkin Druid,599
+Priest,243
+Timestep,53
+Boss,2105
+Warrior,971
+Rogue,883
+Mage,375
+Moonkin Druid,594
+Priest,226
+Timestep,54
+Boss,2065
+Warrior,946
+Rogue,874
+Mage,370
+Moonkin Druid,575
+Priest,221
+Timestep,55
+Boss,2005
+Warrior,914
+Rogue,863
+Mage,361
+Moonkin Druid,563
+Priest,209
+Timestep,56
+Boss,1964
+Warrior,887
+Rogue,856
+Mage,348
+Moonkin Druid,554
+Priest,203
+Timestep,57
+Boss,1908
+Warrior,862
+Rogue,838
+Mage,336
+Moonkin Druid,547
+Priest,192
+Timestep,58
+Boss,1848
+Warrior,828
+Rogue,821
+Mage,324
+Moonkin Druid,537
+Priest,184
+Timestep,59
+Boss,1790
+Warrior,800
+Rogue,811
+Mage,311
+Moonkin Druid,520
+Priest,169
+Timestep,60
+Boss,1738
+Warrior,768
+Rogue,803
+Mage,306
+Moonkin Druid,509
+Priest,151
+Timestep,61
+Boss,1680
+Warrior,735
+Rogue,788
+Mage,288
+Moonkin Druid,492
+Priest,145
+Timestep,62
+Boss,1625
+Warrior,701
+Rogue,774
+Mage,280
+Moonkin Druid,487
+Priest,130
+Timestep,63
+Boss,1579
+Warrior,672
+Rogue,769
+Mage,262
+Moonkin Druid,471
+Priest,122
+Timestep,64
+Boss,1531
+Warrior,643
+Rogue,764
+Mage,253
+Moonkin Druid,461
+Priest,107
+Timestep,65
+Boss,1480
+Warrior,617
+Rogue,752
+Mage,247
+Moonkin Druid,443
+Priest,88
+Timestep,66
+Boss,1440
+Warrior,588
+Rogue,745
+Mage,239
+Moonkin Druid,424
+Priest,82
+Timestep,67
+Boss,1378
+Warrior,557
+Rogue,730
+Mage,230
+Moonkin Druid,417
+Priest,69
+Timestep,68
+Boss,1310
+Warrior,530
+Rogue,714
+Mage,211
+Moonkin Druid,405
+Priest,59
+Timestep,69
+Boss,1249
+Warrior,498
+Rogue,705
+Mage,205
+Moonkin Druid,391
+Priest,42
+Timestep,70
+Boss,1197
+Warrior,471
+Rogue,690
+Mage,186
+Moonkin Druid,385
+Priest,36
+Timestep,71
+Boss,1130
+Warrior,443
+Rogue,675
+Mage,179
+Moonkin Druid,366
+Priest,25
+Timestep,72
+Boss,1083
+Warrior,415
+Rogue,658
+Mage,163
+Moonkin Druid,349
+Priest,12
+Timestep,73
+Boss,1017
+Warrior,390
+Rogue,642
+Mage,157
+Moonkin Druid,334
+Priest,-5
