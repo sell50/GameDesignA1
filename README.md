@@ -9,7 +9,7 @@ Name: Raiyan Afiz
 Email: afiz@uwindsor.ca
 GitHub: RaiyanAfiz
 
-Name: Katerina
+Name: Katerina Pace
 Email: pacek@uwindsor.ca
 GitHub: sell50
 
