@@ -13,6 +13,6 @@ Name: Katerina Pace
 Email: pacek@uwindsor.ca
 GitHub: sell50
 
-Name: Sameeksha
-Email: 
-GitHub:
+Name: Sameeksha Abhijit Nair
+Email: nair11j@uwindsor.ca
+GitHub: sameeksha-nair
