@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: e029d33843545b04bb3a667f399f7c4d
+  - enabled: 1
+    path: Assets/Scenes/ChantalLevel.unity
+    guid: c2ecb19a3c150bb4ba0e9b8ead314348
   m_configObjects: {}
