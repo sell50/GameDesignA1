@@ -2,8 +2,8 @@
 
 Team Members 
 Name: Chantal Santos
-Email: 
-GitHub:
+Email: santoso@uwindsor.ca
+GitHub: chantalsantos7
 
 Name: Raiyan Afiz
 Email: afiz@uwindsor.ca
