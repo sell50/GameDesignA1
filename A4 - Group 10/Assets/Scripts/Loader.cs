@@ -5,15 +5,8 @@ using UnityEngine.SceneManagement;
 
 public static class Loader 
 {
-    public enum Scene
+    public static void Load(int SceneIndex)
     {
-        MainMenu,
-        ChantalLevel,
-        CompletionScene
-    }
-    
-    public static void Load(Scene scene)
-    {
-        SceneManager.LoadScene(scene.ToString());
+        SceneManager.LoadScene(SceneIndex);
     }
 }
