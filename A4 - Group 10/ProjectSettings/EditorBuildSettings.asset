@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ChantalLevel.unity
     guid: c2ecb19a3c150bb4ba0e9b8ead314348
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 687a7995bc894fa42929b7dd597a64a1
+  - enabled: 1
+    path: Assets/Scenes/RaiyanScene.unity
+    guid: 901721c1639f76f4fb6b794c9bd40584
+  - enabled: 1
+    path: Assets/Scenes/CompletionScreen.unity
+    guid: 50cd478c083fc194d87df2a04e4ee8d4
   m_configObjects: {}
