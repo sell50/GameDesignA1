@@ -11,13 +11,13 @@ public class LevelDeath : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            
+            StartCoroutine(PlayerDied());
         }
     }
 
-    private IEnumerator PlayerDied()
+    private static IEnumerator PlayerDied()
     {
         yield return new WaitForSeconds(1);
-        //SceneManager.LoadScene();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

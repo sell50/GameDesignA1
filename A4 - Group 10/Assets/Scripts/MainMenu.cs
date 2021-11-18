@@ -8,4 +8,9 @@ public class MainMenu : MonoBehaviour
     {
         Loader.Load(Loader.Scene.ChantalLevel);
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

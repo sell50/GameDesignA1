@@ -8,7 +8,8 @@ public static class Loader
     public enum Scene
     {
         MainMenu,
-        ChantalLevel
+        ChantalLevel,
+        CompletionScene
     }
     
     public static void Load(Scene scene)
