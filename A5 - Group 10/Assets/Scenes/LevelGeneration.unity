@@ -287,55 +287,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &403334416
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 403334418}
-  - component: {fileID: 403334417}
-  m_Layer: 0
-  m_Name: LevelGenerator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &403334417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403334416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b564ec7b0eb913438a92e50feb47c1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startRoom: {fileID: 841231672}
-  endRoom: {fileID: 8611284401550159566, guid: 429caab58ed00da43a63e0c2ce68ee68, type: 3}
-  levelPrefabs:
-  - {fileID: 8452060443304235070, guid: 797208f2c22eee946b0ec60a171ebc36, type: 3}
-  - {fileID: 2468258849014139423, guid: 2dbd13b83d508a547b6c038e298bb38f, type: 3}
-  roomCount: 10
---- !u!4 &403334418
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403334416}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &504540656
 Mesh:
   m_ObjectHideFlags: 0
@@ -1363,3 +1314,64 @@ PrefabInstance:
       objectReference: {fileID: 782448148}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bdc9a6042eed8441820d9a187bc34b8, type: 3}
+--- !u!1001 &2921950713562957959
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2921950713159675285, guid: 86e85b9095596364f94a46795f3ef209, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921950713159675285, guid: 86e85b9095596364f94a46795f3ef209, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921950713159675285, guid: 86e85b9095596364f94a46795f3ef209, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921950713159675285, guid: 86e85b9095596364f94a46795f3ef209, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921950713159675285, guid: 86e85b9095596364f94a46795f3ef209, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921950713159675285, guid: 86e85b9095596364f94a46795f3ef209, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921950713159675285, guid: 86e85b9095596364f94a46795f3ef209, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921950713159675285, guid: 86e85b9095596364f94a46795f3ef209, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921950713159675285, guid: 86e85b9095596364f94a46795f3ef209, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921950713159675285, guid: 86e85b9095596364f94a46795f3ef209, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921950713159675285, guid: 86e85b9095596364f94a46795f3ef209, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921950713159675286, guid: 86e85b9095596364f94a46795f3ef209, type: 3}
+      propertyPath: startRoom
+      value: 
+      objectReference: {fileID: 841231672}
+    - target: {fileID: 2921950713159675287, guid: 86e85b9095596364f94a46795f3ef209, type: 3}
+      propertyPath: m_Name
+      value: LevelGenerator
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 86e85b9095596364f94a46795f3ef209, type: 3}
