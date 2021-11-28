@@ -5,11 +5,14 @@ using UnityEngine;
 
 public class EndZoneBehaviour : MonoBehaviour
 {
+    public bool endReached;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            ProceduralLevelGeneration.SpawnNewLevel();
+            endReached = true;
         }
     }
+    
+    //TODO: Figure out how to generate new level upon reaching end zone
 }
