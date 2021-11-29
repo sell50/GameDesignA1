@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
@@ -10,12 +9,12 @@ public class FollowPlayer : MonoBehaviour
     void Start()
     {
         //offset = transform.position - playerCharacter.transform.position;
-        offset = new Vector3(0, 10, -10);
+        offset = new Vector3(0, 15, -20);
     }
 
     void LateUpdate()
     {
-        transform.position = playerCharacter.transform.position + offset;
+        transform.position = Vector3.Lerp(playerCharacter.transform.position, (playerCharacter.transform.position + offset), 0.5f);
         transform.LookAt(playerCharacter);
     }
 }
