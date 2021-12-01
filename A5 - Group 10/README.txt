@@ -1,0 +1,1 @@
+Upon reaching the purple endzone, press G on the keyboard to generate a new level

@@ -1,8 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
 public class ProceduralLevelGeneration : MonoBehaviour
@@ -14,15 +13,12 @@ public class ProceduralLevelGeneration : MonoBehaviour
     [SerializeField] private List<Transform> levelPrefabs;
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private NavMeshBaker navMeshBaker;
-    private GameObject endZone;
+    [SerializeField] public List<GameObject> Spawnable;
 
     [SerializeField] private int roomCount;
 
     Vector3 lastRoomExitPoint;
     private GameObject player;
-
-    //private EndZoneBehaviour endZone;
-    private bool levelEndReached;
 
     private void Awake()
     {
@@ -36,15 +32,10 @@ public class ProceduralLevelGeneration : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.G))
         {
-            Debug.Log("This is how I refresh");
             StartCoroutine(GenerateNewLevel());
         }
-        /*if (endZone.GetComponent<EndZoneBehaviour>().endReached)
-        {
-            
-        }*/
     }
 
     private void SpawnRoom()
@@ -54,6 +45,14 @@ public class ProceduralLevelGeneration : MonoBehaviour
         var spawnPosition = lastRoomExitPoint + chosenRoom.position - roomStartPos;
         Transform lastRoomTransform = SpawnRoom(chosenRoom, spawnPosition, Quaternion.identity);
         lastRoomExitPoint = lastRoomTransform.Find("EndPoint").position;
+        foreach (Transform child in lastRoomTransform)
+        {
+            if (child.gameObject.CompareTag("SpawnPoint"))
+            {
+                var item = Spawnable[Random.Range(0, Spawnable.Count)];
+                
+            }
+        }
     }
 
     private Transform SpawnRoom(Transform roomPrefab, Vector3 spawnPosition, Quaternion rotation)
@@ -66,8 +65,7 @@ public class ProceduralLevelGeneration : MonoBehaviour
     private void SpawnNewLevel()
     {
         lastRoomExitPoint = startRoom.Find("EndPoint").position;
-        
-        
+
         for (int i = 0; i < roomCount; i++)
         {
             SpawnRoom();
@@ -76,9 +74,6 @@ public class ProceduralLevelGeneration : MonoBehaviour
         var endRoomStartPos = endRoom.Find("StartPoint").position;
         var  endRoomSpawnPos = lastRoomExitPoint + endRoom.position - endRoomStartPos;
         SpawnRoom(endRoom, endRoomSpawnPos, Quaternion.Euler(0, 180, 0));
-        
-        endZone = endRoom.Find("EndZone").gameObject;
-        //do a coroutine, to wait a few seconds before the new level starts
     }
 
     private GameObject SpawnPlayer()
@@ -87,26 +82,24 @@ public class ProceduralLevelGeneration : MonoBehaviour
          return Instantiate(playerPrefab, playerSpawnPosition, Quaternion.identity);
     }
 
+    //The old level will be destroyed, and a new startRoom and player generated
     IEnumerator GenerateNewLevel()
     {
-        Debug.Log("CoroutineReached");
-        //destroy old level, place new startRoom 
         foreach (Transform child in levelContainer.transform)
         {
             Destroy(child.gameObject);
         }
         
         player.gameObject.SetActive(false);
-        //DestroyImmediate(Player, true);
-        
+
         var newStartRoom = Instantiate(startRoom, new Vector3(0, 0, 0), Quaternion.identity);
         newStartRoom.SetParent(levelContainer.transform);
         startRoom = newStartRoom;
         SpawnNewLevel();
-        //TODO: Some problems with baking new navmesh for newly generated level
+        NavMesh.RemoveAllNavMeshData();
+        yield return new WaitForSeconds(0.5f);
         navMeshBaker.BakeNavMesh();
         player = SpawnPlayer();
-        yield return new WaitForSeconds(1.5f);
     }
     
     
