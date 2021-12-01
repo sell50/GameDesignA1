@@ -7,7 +7,7 @@ public class ShootBullet : MonoBehaviour
 
     [SerializeField] GameObject bullet_prefab;
     [SerializeField] Transform target;
-    [SerializeField] float bullet_speed = 50f;
+    [SerializeField] float bullet_speed = -20f;
     [SerializeField] float bullet_reload = 0.5f;
     [SerializeField] float rotation_speed = 1f;
 
@@ -39,8 +39,11 @@ public class ShootBullet : MonoBehaviour
 
             //bullet.velocity = transform.TransformDirection(Vector3(0, 0, bullet_speed));
             Rigidbody bulletRB = bullet.GetComponent<Rigidbody>();
-            bulletRB.AddForce(Vector3.forward * bullet_speed);
+            //bulletRB.AddForce(Vector3.forward * bullet_speed);
+            bulletRB.velocity = transform.forward * bullet_speed;
             yield return new WaitForSeconds(bullet_reload);
+
+            Destroy(bullet, 2.0f);
         }
     }
 }
