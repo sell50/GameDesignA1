@@ -8,17 +8,17 @@ public class NavMeshBaker : MonoBehaviour
 {
     [SerializeField] NavMeshSurface[] navMeshSurfaces;
 
-    private void Start()
+    private void Awake()
     {
         BakeNavMesh();
     }
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        /*if (Input.GetKeyDown(KeyCode.Space))
         {
             BakeNavMesh();
-        }
+        }*/
     }
 
     public void BakeNavMesh()

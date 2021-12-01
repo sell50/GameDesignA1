@@ -45,7 +45,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startRoom: {fileID: 0}
   endRoom: {fileID: 8611284401550159566, guid: 429caab58ed00da43a63e0c2ce68ee68, type: 3}
+  levelContainer: {fileID: 0}
   levelPrefabs:
   - {fileID: 8452060443304235070, guid: 797208f2c22eee946b0ec60a171ebc36, type: 3}
   - {fileID: 2468258849014139423, guid: 2dbd13b83d508a547b6c038e298bb38f, type: 3}
-  roomCount: 10
+  - {fileID: 8168958325135992480, guid: 6785f32fd5c34fc4eac6d1ebc9c43512, type: 3}
+  - {fileID: 7610389455200360064, guid: dabdbda3aa313354296c2aea5e41ce68, type: 3}
+  Player: {fileID: 7944274818279512276, guid: bbaefc81d052db74e92cc201822ec613, type: 3}
+  roomCount: 1
