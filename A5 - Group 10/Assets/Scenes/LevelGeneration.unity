@@ -1572,9 +1572,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2092048899}
     - target: {fileID: 2921950713159675286, guid: 86e85b9095596364f94a46795f3ef209, type: 3}
-      propertyPath: Spawnable.Array.data[2]
+      propertyPath: levelPrefabs.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921950713159675286, guid: 86e85b9095596364f94a46795f3ef209, type: 3}
+      propertyPath: levelPrefabs.Array.data[4]
       value: 
-      objectReference: {fileID: 8811901100350098338, guid: abbdb9e4782d25f4cb8bdb0acab9ccc3, type: 3}
+      objectReference: {fileID: 2964524118349155590, guid: 41b9486f8ae125948ad240c9c94718d4, type: 3}
     - target: {fileID: 2921950713159675287, guid: 86e85b9095596364f94a46795f3ef209, type: 3}
       propertyPath: m_Name
       value: LevelGenerator

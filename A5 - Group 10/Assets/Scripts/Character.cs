@@ -4,20 +4,12 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    public int health;
+    public int keys;
     // Start is called before the first frame update
     void Start()
     {
-        health = 100;
+        keys = 0;
     }
 
-     public void ReduceHealth(int damageDealt)
-        {
-            health -= damageDealt;
-        }
 
-        public void IncreaseHealth(int hpHealed)
-        {
-            health += hpHealed;
-        }
 }
