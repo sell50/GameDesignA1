@@ -12,17 +12,7 @@ public class RemoveObstacle : MonoBehaviour
         {
 
             transform.position = Vector3.MoveTowards(transform.position, other.transform.position, speed * Time.deltaTime);
-
-            if (obstacle.activeSelf)
-            {
-                obstacle.SetActive(false);
-            }
-            else
-            {
-                obstacle.SetActive(true);
-            }
-
-
+            obstacle.SetActive(true);
         }
 
         if (Vector3.Distance(transform.position, other.transform.position) <= 0.5) Destroy(gameObject);
