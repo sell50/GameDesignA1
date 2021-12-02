@@ -50,7 +50,7 @@ public class ProceduralLevelGeneration : MonoBehaviour
             if (child.gameObject.CompareTag("SpawnPoint"))
             {
                 var item = Spawnable[Random.Range(0, Spawnable.Count)];
-                
+                Instantiate(item, child.position, Quaternion.identity);
             }
         }
     }
@@ -99,7 +99,9 @@ public class ProceduralLevelGeneration : MonoBehaviour
         NavMesh.RemoveAllNavMeshData();
         yield return new WaitForSeconds(0.5f);
         navMeshBaker.BakeNavMesh();
+        var oldPlayer = player;
         player = SpawnPlayer();
+        Destroy(oldPlayer);
     }
     
     
