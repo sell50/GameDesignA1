@@ -22,7 +22,6 @@ public class PlayerAttack : MonoBehaviour
     {
         if(other.gameObject.tag == "Enemy")
         {
-            Debug.Log("Collide");
             player.navMeshAgent.SetDestination(other.transform.position);
             anim.SetBool("isRunning", true);
             if (Vector3.Distance(player.navMeshAgent.transform.position, other.transform.position) <= 10.0f) { Attack(other); }
