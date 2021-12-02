@@ -8,10 +8,16 @@ using TMPro;
 
 public class EndScreenScores : MonoBehaviour
 {
-    public TMP_Text keysPU, timeEl, lvlComp;
+    public TMP_Text coinsPU, timeEl, lvlComp;
+    float TimeT;
 
     void Update()
     {
         lvlComp.text = GameObject.Find("LevelGenerator").GetComponent<ProceduralLevelGeneration>().levelsGenerated.ToString();
+        coinsPU.text = GameObject.Find("Coin").GetComponent<Attractor>().coins.ToString();
+
+        TimeT += Time.deltaTime;
+           
+        Debug.Log("TIMER:" + TimeT);
     }
 }
