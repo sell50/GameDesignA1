@@ -9,8 +9,8 @@ public class EndScreenScores : MonoBehaviour
 {
     public TMP_Text keysPU, timeEl, lvlComp;
 
-    void update()
+    void Update()
     {
-
+        lvlComp.text = GameObject.Find("LevelGenerator").GetComponent<ProceduralLevelGeneration>().levelsGenerated.ToString();
     }
 }
