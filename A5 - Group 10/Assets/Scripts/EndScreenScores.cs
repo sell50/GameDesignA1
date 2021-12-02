@@ -9,7 +9,7 @@ public class EndScreenScores : MonoBehaviour
 {
     public TMP_Text keysPU, timeEl, lvlComp;
 
-    void start()
+    void update()
     {
 
     }
