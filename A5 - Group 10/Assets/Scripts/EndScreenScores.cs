@@ -9,13 +9,9 @@ using TMPro;
 public class EndScreenScores : MonoBehaviour
 {
     public TMP_Text keysPU, timeEl, lvlComp;
-    public GameObject levelsComplete;
-    public ProceduralLevelGeneration level;
-   
-    void start()
+
+    void Update()
     {
-        levelsComplete = GameObject.Find("LevelGenerator");
-        level = levelsComplete.GetComponent<ProceduralLevelGeneration>();
-        Debug.Log(1);
+        lvlComp.text = GameObject.Find("LevelGenerator").GetComponent<ProceduralLevelGeneration>().levelsGenerated.ToString();
     }
 }

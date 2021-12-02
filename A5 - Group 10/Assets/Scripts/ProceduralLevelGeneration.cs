@@ -91,7 +91,19 @@ public class ProceduralLevelGeneration : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
-        
+
+        var pickups = GameObject.FindGameObjectsWithTag("Pickup");
+        foreach (var pickup in pickups)
+        {
+            Destroy(pickup);
+        }
+
+        var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (var enemy in enemies)
+        {
+            Destroy(enemy);
+        }
+            
         player.gameObject.SetActive(false);
 
         var newStartRoom = Instantiate(startRoom, new Vector3(0, 0, 0), Quaternion.identity);

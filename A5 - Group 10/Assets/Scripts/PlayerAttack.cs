@@ -8,7 +8,6 @@ public class PlayerAttack : MonoBehaviour
     public Animator anim;
     public Transform attackPoint;
     public float attackRange = 1.8f;
-    public LayerMask layer;
     public float speed;
     public PlayerMovement player;
     public EnemyStat enemy;
@@ -21,19 +20,18 @@ public class PlayerAttack : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if(other.name == "Enemy")
+        if(other.gameObject.tag == "Enemy")
         {
-            
             player.navMeshAgent.SetDestination(other.transform.position);
             anim.SetBool("isRunning", true);
-            if (Vector3.Distance(player.navMeshAgent.transform.position, other.transform.position) <= 10.0f) { Attack(); }
+            if (Vector3.Distance(player.navMeshAgent.transform.position, other.transform.position) <= 10.0f) { Attack(other); }
         }
     }
 
-    void Attack()
+    void Attack(Collider en)
     {
         anim.SetBool("Attack", true);
-        enemy = GameObject.Find("Enemy").GetComponent<EnemyStat>() ;
+        enemy = en.gameObject.GetComponent<EnemyStat>() ;
         enemy.takeDMG();
         if (enemy.HP <= 0) { anim.SetBool("Attack", false); anim.SetBool("isRunning", false); }
     }
