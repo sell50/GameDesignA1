@@ -573,6 +573,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 303779460}
   m_CullTransparentMesh: 1
+--- !u!114 &395433128 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2921950713159675286, guid: 86e85b9095596364f94a46795f3ef209, type: 3}
+  m_PrefabInstance: {fileID: 2921950713562957959}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b564ec7b0eb913438a92e50feb47c1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &468608381
 Mesh:
   m_ObjectHideFlags: 0
@@ -1433,6 +1444,7 @@ RectTransform:
   - {fileID: 303779461}
   - {fileID: 651183490}
   - {fileID: 763462740}
+  - {fileID: 1401253982}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1813,6 +1825,59 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1401253981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1401253982}
+  - component: {fileID: 1401253983}
+  m_Layer: 5
+  m_Name: Script
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1401253982
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401253981}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 962801640}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 106, y: 71}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1401253983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401253981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c4c201f0d549f40aee873a3a57363d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keysPU: {fileID: 303779462}
+  timeEl: {fileID: 861819814}
+  lvlComp: {fileID: 245024793}
+  levelsComplete: {fileID: 0}
+  level: {fileID: 395433128}
 --- !u!43 &1579522554
 Mesh:
   m_ObjectHideFlags: 0
