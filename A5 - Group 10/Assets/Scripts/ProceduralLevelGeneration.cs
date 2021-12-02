@@ -17,12 +17,14 @@ public class ProceduralLevelGeneration : MonoBehaviour
 
     [SerializeField] private int roomCount;
 
-    Vector3 lastRoomExitPoint;
+    private Vector3 lastRoomExitPoint;
     private GameObject player;
+    [HideInInspector] public int levelsGenerated;
 
     private void Awake()
     {
         SpawnNewLevel();
+        levelsGenerated++;
     }
 
     private void Start()
@@ -43,7 +45,7 @@ public class ProceduralLevelGeneration : MonoBehaviour
         var chosenRoom = levelPrefabs[Random.Range(0, levelPrefabs.Count)];
         var roomStartPos = chosenRoom.Find("StartPoint").position;
         var spawnPosition = lastRoomExitPoint + chosenRoom.position - roomStartPos;
-        Transform lastRoomTransform = SpawnRoom(chosenRoom, spawnPosition, Quaternion.identity);
+        var lastRoomTransform = SpawnRoom(chosenRoom, spawnPosition, Quaternion.identity);
         lastRoomExitPoint = lastRoomTransform.Find("EndPoint").position;
         foreach (Transform child in lastRoomTransform)
         {
@@ -66,7 +68,7 @@ public class ProceduralLevelGeneration : MonoBehaviour
     {
         lastRoomExitPoint = startRoom.Find("EndPoint").position;
 
-        for (int i = 0; i < roomCount; i++)
+        for (var i = 0; i < roomCount; i++)
         {
             SpawnRoom();
         }
@@ -83,7 +85,7 @@ public class ProceduralLevelGeneration : MonoBehaviour
     }
 
     //The old level will be destroyed, and a new startRoom and player generated
-    IEnumerator GenerateNewLevel()
+    private IEnumerator GenerateNewLevel()
     {
         foreach (Transform child in levelContainer.transform)
         {
@@ -102,6 +104,7 @@ public class ProceduralLevelGeneration : MonoBehaviour
         var oldPlayer = player;
         player = SpawnPlayer();
         Destroy(oldPlayer);
+        levelsGenerated++;
     }
     
     
