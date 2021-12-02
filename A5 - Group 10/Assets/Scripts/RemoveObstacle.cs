@@ -3,29 +3,28 @@ using UnityEngine;
 public class RemoveObstacle : MonoBehaviour
 {
     [SerializeField] private GameObject obstacle;
+    public float speed;
 
-
-    void Update()
+    private void OnTriggerStay(Collider other)
     {
-        transform.Rotate(Time.deltaTime * 30f,
-                            Time.deltaTime * 15f,
-                            Time.deltaTime * 45f);
-    }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.name == "Player")
+        if (other.tag == "Player")
         {
-            if (obstacle.activeSelf) 
+
+            transform.position = Vector3.MoveTowards(transform.position, other.transform.position, speed * Time.deltaTime);
+
+            if (obstacle.activeSelf)
             {
                 obstacle.SetActive(false);
             }
-            else 
+            else
             {
                 obstacle.SetActive(true);
             }
 
-            Destroy(gameObject);
+
         }
+
+        if (Vector3.Distance(transform.position, other.transform.position) <= 0.5) Destroy(gameObject);
     }
 }
