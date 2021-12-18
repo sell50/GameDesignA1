@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Flag : MonoBehaviour
+namespace ScoreSystem
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Flag : BasicScoreSystem
     {
-        
-    }
+        void OnTriggerEnter(Collider other)
+        {
+            if (other.tag == "Base")
+            {
+                Score();
+            }
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
