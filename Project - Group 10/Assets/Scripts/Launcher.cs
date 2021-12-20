@@ -14,7 +14,8 @@ public class Launcher : MonoBehaviourPunCallbacks
     
     #region Private Fields
     
-    private string gameVersion = "1";
+    private readonly string _gameVersion = "1";
+    private bool _isConnecting;
     
     #endregion
 
@@ -49,7 +50,11 @@ public class Launcher : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         Debug.Log("PUN Basics Tutorial: OnConnectedToMaster was called by PUN");
-        PhotonNetwork.JoinRandomRoom();
+        if (_isConnecting)
+        {
+            PhotonNetwork.JoinRandomRoom();
+            _isConnecting = false;
+        }
     }
     
     public override void OnDisconnected(DisconnectCause cause)
@@ -57,6 +62,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         progressLabel.SetActive(false);
         controlPanel.SetActive(true);
         Debug.LogWarningFormat("PUN Basics Tutorial/Launcher: OnDisconnected() was called by PUN with reason {0}", cause);
+        _isConnecting = false;
     }
     
     public override void OnJoinRandomFailed(short returnCode, string message)
@@ -68,6 +74,12 @@ public class Launcher : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         Debug.Log("PUN Basics Tutorial/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
+        // #Critical: We only load if we are the first player, else we rely on `PhotonNetwork.AutomaticallySyncScene` to sync our instance scene.
+        if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
+        {
+            Debug.Log("We load the 'Room for 1");
+            PhotonNetwork.LoadLevel("Room for 1");
+        }
     }
     
     #endregion
@@ -87,10 +99,30 @@ public class Launcher : MonoBehaviourPunCallbacks
         }
         else
         {
-            PhotonNetwork.ConnectUsingSettings();
-            PhotonNetwork.GameVersion = gameVersion;
+            _isConnecting = PhotonNetwork.ConnectUsingSettings();
+            PhotonNetwork.GameVersion = _gameVersion;
         }
+        
     }
-    
+
+    public void SelectWarrior()
+    {
+        
+    }
+
+    public void SelectIceMage()
+    {
+        
+    }
+
+    public void SelectFireMage()
+    {
+        
+    }
+
+    public void SelectGrenadier()
+    {
+        
+    }
     #endregion
 }
