@@ -39,12 +39,7 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.AutomaticallySyncScene = true;
     }
-    
-    private void Start()
-    {
-        // controlPanel.SetActive(true);
-    }
-    
+
     #endregion
 
     #region Public Methods

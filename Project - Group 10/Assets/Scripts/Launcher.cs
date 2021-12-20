@@ -104,25 +104,6 @@ public class Launcher : MonoBehaviourPunCallbacks
         }
         
     }
-
-    public void SelectWarrior()
-    {
-        
-    }
-
-    public void SelectIceMage()
-    {
-        
-    }
-
-    public void SelectFireMage()
-    {
-        
-    }
-
-    public void SelectGrenadier()
-    {
-        
-    }
+    
     #endregion
 }

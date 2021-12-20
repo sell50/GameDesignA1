@@ -12,14 +12,12 @@ using Hashtable = ExitGames.Client.Photon.Hashtable;
 public class PlayerItem : MonoBehaviourPunCallbacks
 {
     public TMP_Text playerName;
-
-    //public Image backgroundImage;
-    /*public Color highlightColor;
-    public GameObject leftArrowButton;
-    public GameObject rightArrowButton;*/
+    
     public GameObject characterChoiceToggles;
+    public GameObject teamChoiceToggles;
 
     public TMP_Text characterChosenText;
+    public TMP_Text teamChosenText;
     /*public Toggle warriorToggle;
     public Toggle grenadierToggle;
     public Toggle iceMageToggle;
@@ -32,12 +30,14 @@ public class PlayerItem : MonoBehaviourPunCallbacks
     
     private Hashtable playerProperties = new Hashtable();
     private Player _player;
+   
     public void SetPlayerInfo(Player player)
     {
         playerName.text = player.NickName;
         _player = player;
         UpdatePlayerItem(_player);
     }
+   
     public void SetGrenadierChoice()
     {
         _grenadierChosen = true;
@@ -85,10 +85,23 @@ public class PlayerItem : MonoBehaviourPunCallbacks
         
         PhotonNetwork.SetPlayerCustomProperties(playerProperties);
     }
+
+    public void SetRedTeam()
+    {
+        playerProperties["playerTeam"] = 0; //0 corresponds to Red Team
+        PhotonNetwork.SetPlayerCustomProperties(playerProperties);
+    }
+
+    public void SetBlueTeam()
+    {
+        playerProperties["playerTeam"] = 1; //1 corresponds to Blue Team
+        PhotonNetwork.SetPlayerCustomProperties(playerProperties);
+    }
     
     public void ApplyLocalChanges()
     {
         characterChoiceToggles.SetActive(true);
+        teamChoiceToggles.SetActive(true);
         //backgroundImage.color = highlightColor;
         /*leftArrowButton.SetActive(true);
         rightArrowButton.SetActive(true);*/
@@ -101,8 +114,7 @@ public class PlayerItem : MonoBehaviourPunCallbacks
             UpdatePlayerItem(targetPlayer);
         }
     }
-
-    //TODO: Radio buttons aren't updating on other players' screens
+    
     private void UpdatePlayerItem(Player player)
     {
         if (player.CustomProperties.ContainsKey("playerClass"))
@@ -127,6 +139,25 @@ public class PlayerItem : MonoBehaviourPunCallbacks
         else
         {
             playerProperties["playerClass"] = 0;
+        }
+
+        if (player.CustomProperties.ContainsKey("playerTeam"))
+        {
+            switch (player.CustomProperties["playerTeam"])
+            {
+                case 0:
+                    teamChosenText.text = "Team Chosen: \n" + "Red";
+                    break;
+                case 1:
+                    teamChosenText.text = "Team Chosen: \n" + "Blue";
+                    break;
+            }
+
+            playerProperties["playerTeam"] = (int) player.CustomProperties["playerTeam"];
+        }
+        else
+        {
+            playerProperties["playerTeam"] = 0;
         }
     }
 }
