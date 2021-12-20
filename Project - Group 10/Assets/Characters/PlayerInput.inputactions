@@ -36,14 +36,6 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
-                },
-                {
-                    "name": "Look",
-                    "type": "Value",
-                    "id": "206912c2-d315-4c87-a09c-010a020d703a",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -134,10 +126,26 @@
                     "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
+                }
+            ]
+        },
+        {
+            "name": "Camera",
+            "id": "2bb49aa1-6eec-4772-bbb1-32c0c4794079",
+            "actions": [
+                {
+                    "name": "Look",
+                    "type": "Value",
+                    "id": "9b0f761e-16fd-4693-905a-d5edc74ebc67",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
                 {
                     "name": "",
-                    "id": "9821d88c-51d2-4b71-8bba-b8b723e9e31a",
+                    "id": "778f60e8-b30f-4f58-916f-57d2ce3e42e1",
                     "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",

@@ -18,10 +18,6 @@ public class PlayerItem : MonoBehaviourPunCallbacks
 
     public TMP_Text characterChosenText;
     public TMP_Text teamChosenText;
-    /*public Toggle warriorToggle;
-    public Toggle grenadierToggle;
-    public Toggle iceMageToggle;
-    public Toggle fireMageToggle;*/
 
     private bool _warriorChosen;
     private bool _grenadierChosen;
@@ -102,9 +98,7 @@ public class PlayerItem : MonoBehaviourPunCallbacks
     {
         characterChoiceToggles.SetActive(true);
         teamChoiceToggles.SetActive(true);
-        //backgroundImage.color = highlightColor;
-        /*leftArrowButton.SetActive(true);
-        rightArrowButton.SetActive(true);*/
+
     }
 
     public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
@@ -152,7 +146,6 @@ public class PlayerItem : MonoBehaviourPunCallbacks
                     teamChosenText.text = "Team Chosen: \n" + "Blue";
                     break;
             }
-
             playerProperties["playerTeam"] = (int) player.CustomProperties["playerTeam"];
         }
         else

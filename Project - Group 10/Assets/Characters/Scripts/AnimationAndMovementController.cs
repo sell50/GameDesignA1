@@ -179,10 +179,10 @@ namespace Characters.Scripts
         
         private void Start()
         {
-            var cameraWork = this.gameObject.GetComponent<CameraWork>();
+           // var cameraWork = this.gameObject.GetComponent<CameraWork>();
 
 
-            if (cameraWork != null)
+            /*if (cameraWork != null)
             {
                 if (photonView.IsMine)
                 {
@@ -192,7 +192,7 @@ namespace Characters.Scripts
             else
             {
                 Debug.LogError("<Color=Red><a>Missing</a></Color> CameraWork Component on playerPrefab.", this);
-            }
+            }*/
         }
 
         private void Update()
@@ -224,7 +224,10 @@ namespace Characters.Scripts
 
         private void OnEnable()
         {
-            _playerInput.CharacterControls.Enable();
+            if (_photonView.IsMine)
+            {
+                _playerInput.CharacterControls.Enable();
+            }
         }
 
         private void OnDisable()
