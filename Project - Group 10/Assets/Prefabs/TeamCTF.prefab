@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3023398250979401310}
   m_Layer: 0
   m_Name: Base Blue
-  m_TagString: Untagged
+  m_TagString: Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -327,8 +327,8 @@ GameObject:
   - component: {fileID: 6486826067901167826}
   - component: {fileID: 8979212847751910479}
   m_Layer: 0
-  m_Name: Base Green
-  m_TagString: Untagged
+  m_Name: Base Red
+  m_TagString: Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -582,7 +582,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f25c0f4435b04834281a5ca239f92ccd, type: 2}
+  - {fileID: 2100000, guid: e89810ee123c78f47b3a042b34bec80a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
