@@ -5,6 +5,8 @@ using UnityEngine;
 public class ItemPickup : MonoBehaviour
 {
     public float speed;
+    public int ammo;
+    public int health;
     
     private void OnTriggerStay(Collider other)
     {
@@ -15,7 +17,10 @@ public class ItemPickup : MonoBehaviour
         }
         if (Vector3.Distance(transform.position, other.transform.position) <= 0.5)
         {
-            
+            if(gameObject.tag == "ammo")
+                ammo++;
+            if(gameObject.tag == "health")
+                health++;
             Destroy(gameObject);
         }
     }
