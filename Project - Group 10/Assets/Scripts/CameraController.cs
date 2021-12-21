@@ -53,17 +53,19 @@ public class CameraController : MonoBehaviourPun
 
     private void OnEnable()
     {
-        if (_photonView.IsMine)
+        _playerInput.Camera.Enable();
+        /*if (_photonView.IsMine)
         {
             _playerInput.Camera.Enable();
-        }
+        }*/
     }
 
     private void OnDisable()
     {
-        if (_photonView.IsMine)
+        _playerInput.Camera.Disable();
+        /*if (_photonView.IsMine)
         {
             _playerInput.Camera.Disable();
-        }
+        }*/
     }
 }

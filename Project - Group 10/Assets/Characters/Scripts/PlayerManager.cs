@@ -13,7 +13,7 @@ namespace Characters.Scripts
         #region Public Fields
 
         [Tooltip("The current health of our player.")]
-        public float health = 1f;
+        public float health = 100f;
 
         //public PhotonView photonView;
         public static GameObject LocalPlayerInstance;
@@ -84,7 +84,11 @@ namespace Characters.Scripts
 
         private void Start()
         {
-            CameraWork _cameraWork = GetComponent<CameraWork>();
+            if (photonView.IsMine)
+            {
+                Camera.main.GetComponent<CameraFollow>().SetTarget(gameObject.transform);
+            }
+            /*CameraWork _cameraWork = GetComponent<CameraWork>();
 
             if (_cameraWork != null)
             {
@@ -96,7 +100,7 @@ namespace Characters.Scripts
             else
             {
                 Debug.LogError("<Color=Red><a>Missing</a></Color> CameraWork Component on playerPrefab.", this);
-            }
+            }*/
             
             UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
         }
