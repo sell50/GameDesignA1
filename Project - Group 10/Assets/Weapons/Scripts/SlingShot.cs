@@ -18,27 +18,12 @@ public class SlingShot : MonoBehaviour
     public ItemPickup count;
     public int ammoCount;
 
-    private Weapon_Input weapon_input;
-   // private bool isMouseClick = false;
     void Start()
     {
         count = new ItemPickup();
         ammoCount = count.GetAmmo();
     }
 
-   /* private void Awake()
-    {
-        weapon_input = new Weapon_Input();
-        weapon_input.WeaponControl.SlingLaunch.started += onClick;
-        weapon_input.WeaponControl.SlingLaunch.canceled += onClick;
-        weapon_input.WeaponControl.SlingLaunch.performed += onClick;
-    }
-
-    void onClick(InputAction.CallbackContext context)
-    {
-        isMouseClick = context.ReadValueAsButton();
-        Debug.Log("Pressed");
-    }*/
     // Update is called once per frame
     void Update()
     {
@@ -94,7 +79,7 @@ public class SlingShot : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")        //choose appropriately
         {
-            //reduce character health 1-2 damage
+            //reduce character health 1-2 damage    //Use collider in stone i.e currentPos
         }
     }
 }

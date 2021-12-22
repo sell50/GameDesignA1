@@ -13,33 +13,41 @@ public class Bow_Arrow : MonoBehaviour
     private Transform currentPos;
     private bool draw;
     public Animator anim;
-    // Start is called before the first frame update
+    public ItemPickup count;
+    public int ammoCount;
+    float shotForce = 15;
     void Start()
     {
+        count = new ItemPickup();
+        ammoCount = count.GetAmmo();
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (ammoCount != 0)
         {
-            anim.SetBool("Aim", true);
-            currentPos = Instantiate(arrow, drawFrom.position, Quaternion.identity, transform);
-            Draw_Arrow(15);
-            Shoot(15);
+            if (Input.GetMouseButtonDown(0))
+            {
+                anim.SetBool("Aim", true);
+                currentPos = Instantiate(arrow, drawFrom.position, Quaternion.identity, transform);
+                Draw_Arrow(15);
+                StartCoroutine(Shoot());
+            }
+            else if (Input.GetMouseButtonUp(0)) anim.SetBool("Aim", false);
         }
-        else if (Input.GetMouseButtonUp(0)) anim.SetBool("Aim", false);
     }
 
-    void Shoot(float shotForce)
+    private IEnumerator Shoot()
     {
         draw = false;
         currentPos.transform.parent = null;
         Rigidbody projectileRigidBody = currentPos.GetComponent<Rigidbody>();
         projectileRigidBody.isKinematic = false;
         projectileRigidBody.AddForce(transform.right * shotForce, ForceMode.Impulse);
-        
+        ammoCount--;
+        yield return new WaitForSeconds(4);
+
     }
     void Draw_Arrow(float speed)
     {
@@ -68,7 +76,7 @@ public class Bow_Arrow : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")        //choose appropriately
         {
-            //reduce character health 6-9 damage
+            //reduce character health 6-9 damage     //Add collider in arrow i.e currentPos
         }
     }
 }
