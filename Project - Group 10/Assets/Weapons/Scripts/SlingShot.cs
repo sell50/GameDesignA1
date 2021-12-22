@@ -19,14 +19,14 @@ public class SlingShot : MonoBehaviour
     public int ammoCount;
 
     private Weapon_Input weapon_input;
-    private bool isMouseClick = false;
+   // private bool isMouseClick = false;
     void Start()
     {
         count = new ItemPickup();
         ammoCount = count.GetAmmo();
     }
 
-    private void Awake()
+   /* private void Awake()
     {
         weapon_input = new Weapon_Input();
         weapon_input.WeaponControl.SlingLaunch.started += onClick;
@@ -38,19 +38,19 @@ public class SlingShot : MonoBehaviour
     {
         isMouseClick = context.ReadValueAsButton();
         Debug.Log("Pressed");
-    }
+    }*/
     // Update is called once per frame
     void Update()
     {
         if ( ammoCount != 0)
         {
-            if (isMouseClick)
+            if (Input.GetMouseButtonDown(0))
             {
                 currentPos = Instantiate(projectile, drawFrom.position, Quaternion.identity, transform);
                 DrawProjectile(0.05f);
             }
-           // else if (!isMouseClick) ReleaseAndShoot(50);
-            ammoCount--;
+            else if (Input.GetMouseButtonUp(0)) ReleaseAndShoot(50);
+ 
         }
     }
     public void ReleaseAndShoot(float shotForce)
@@ -61,6 +61,7 @@ public class SlingShot : MonoBehaviour
         projectileRigidBody.isKinematic = false;
         projectileRigidBody.AddForce(transform.forward * shotForce, ForceMode.Impulse);
         slingString.centre = drawFrom;
+        ammoCount--;
     }
     public void DrawProjectile(float speed)
     {
