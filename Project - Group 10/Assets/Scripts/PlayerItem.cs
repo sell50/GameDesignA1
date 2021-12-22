@@ -15,15 +15,22 @@ public class PlayerItem : MonoBehaviourPunCallbacks
     
     public GameObject characterChoiceToggles;
     public GameObject teamChoiceToggles;
+    public GameObject weaponChoiceToggles;
 
     public TMP_Text characterChosenText;
     public TMP_Text teamChosenText;
+    public TMP_Text weaponChosenText;
 
     private bool _warriorChosen;
     private bool _grenadierChosen;
     private bool _iceMageChosen;
     private bool _fireMageChosen;
-    
+
+    private bool _swordChosen;
+    private bool _bowChosen;
+    private bool _daggerChosen;
+    private bool _slingshotChosen;
+
     private Hashtable playerProperties = new Hashtable();
     private Player _player;
    
@@ -93,11 +100,59 @@ public class PlayerItem : MonoBehaviourPunCallbacks
         playerProperties["playerTeam"] = 1; //1 corresponds to Blue Team
         PhotonNetwork.SetPlayerCustomProperties(playerProperties);
     }
-    
+
+    public void SetSwordChoice()
+    {
+        _swordChosen = true;
+        _bowChosen = false;
+        _daggerChosen = false;
+        _slingshotChosen = false;
+
+        playerProperties["playerWeapon"] = 0;
+
+        PhotonNetwork.SetPlayerCustomProperties(playerProperties);
+    }
+
+    public void SetBowChoice()
+    {
+        _swordChosen = false;
+        _bowChosen = true;
+        _daggerChosen = false;
+        _slingshotChosen = false;
+
+        playerProperties["playerWeapon"] = 1;
+
+        PhotonNetwork.SetPlayerCustomProperties(playerProperties);
+    }
+
+    public void SetDaggerChoice()
+    {
+        _swordChosen = false;
+        _bowChosen = false;
+        _daggerChosen = true;
+        _slingshotChosen = false;
+
+        playerProperties["playerWeapon"] = 2;
+
+        PhotonNetwork.SetPlayerCustomProperties(playerProperties);
+    }
+
+    public void SetSlingshotChoice()
+    {
+        _swordChosen = false;
+        _bowChosen = false;
+        _daggerChosen = false;
+        _slingshotChosen = true;
+
+        playerProperties["playerWeapon"] = 3;
+
+        PhotonNetwork.SetPlayerCustomProperties(playerProperties);
+    }
     public void ApplyLocalChanges()
     {
         characterChoiceToggles.SetActive(true);
         teamChoiceToggles.SetActive(true);
+        weaponChoiceToggles.SetActive(true);
 
     }
 
@@ -151,6 +206,30 @@ public class PlayerItem : MonoBehaviourPunCallbacks
         else
         {
             playerProperties["playerTeam"] = 0;
+        }
+
+        if (player.CustomProperties.ContainsKey("playerWeapon"))
+        {
+            switch (player.CustomProperties["playerWeapon"])
+            {
+                case 0:
+                    characterChosenText.text = "Weapon Chosen: \n" + "Sword";
+                    break;
+                case 1:
+                    characterChosenText.text = "Weapon Chosen: \n" + "Bow";
+                    break;
+                case 2:
+                    characterChosenText.text = "Weapon Chosen: \n" + "Dagger";
+                    break;
+                case 3:
+                    characterChosenText.text = "Weapon Chosen: \n" + "Slingshot";
+                    break;
+            }
+            playerProperties["playerWeapon"] = (int)player.CustomProperties["playerWeapon"];
+        }
+        else
+        {
+            playerProperties["playerWeapon"] = 0;
         }
     }
 }
