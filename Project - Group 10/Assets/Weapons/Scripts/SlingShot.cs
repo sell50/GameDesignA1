@@ -18,34 +18,25 @@ public class SlingShot : MonoBehaviour
     public ItemPickup count;
     public int ammoCount;
 
-    private Weapon_Input weapon_input;
-   // private bool isMouseClick = false;
+    public GameObject child;
+
     void Start()
     {
         count = new ItemPickup();
         ammoCount = count.GetAmmo();
+        child = transform.GetChild(0).gameObject;
     }
 
-   /* private void Awake()
-    {
-        weapon_input = new Weapon_Input();
-        weapon_input.WeaponControl.SlingLaunch.started += onClick;
-        weapon_input.WeaponControl.SlingLaunch.canceled += onClick;
-        weapon_input.WeaponControl.SlingLaunch.performed += onClick;
-    }
-
-    void onClick(InputAction.CallbackContext context)
-    {
-        isMouseClick = context.ReadValueAsButton();
-        Debug.Log("Pressed");
-    }*/
     // Update is called once per frame
     void Update()
     {
+
         if ( ammoCount != 0)
         {
+
             if (Input.GetMouseButtonDown(0))
             {
+                child.SetActive(true);
                 currentPos = Instantiate(projectile, drawFrom.position, Quaternion.identity, transform);
                 DrawProjectile(0.05f);
             }
@@ -62,6 +53,7 @@ public class SlingShot : MonoBehaviour
         projectileRigidBody.AddForce(transform.forward * shotForce, ForceMode.Impulse);
         slingString.centre = drawFrom;
         ammoCount--;
+        child.SetActive(false);
     }
     public void DrawProjectile(float speed)
     {
@@ -94,7 +86,7 @@ public class SlingShot : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")        //choose appropriately
         {
-            //reduce character health 1-2 damage
+            //reduce character health 1-2 damage    //Use collider in stone i.e currentPos
         }
     }
 }

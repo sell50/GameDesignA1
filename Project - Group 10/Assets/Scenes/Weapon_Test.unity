@@ -391,7 +391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717406733745140, guid: d03c4353fda446d4f8df56d422578d64, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4620178347958848, guid: d03c4353fda446d4f8df56d422578d64, type: 3}
       propertyPath: m_RootOrder
@@ -437,10 +437,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6722943369399331392, guid: d03c4353fda446d4f8df56d422578d64, type: 3}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 1234328649}
+    - target: {fileID: 8011442188414424453, guid: d03c4353fda446d4f8df56d422578d64, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d03c4353fda446d4f8df56d422578d64, type: 3}
 --- !u!1001 &1136959275
@@ -504,11 +504,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 452a1ef0aca62394d9145df92353b522, type: 3}
---- !u!95 &1234328649 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 95329518231908724, guid: d03c4353fda446d4f8df56d422578d64, type: 3}
-  m_PrefabInstance: {fileID: 681803052}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1737051960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -520,9 +515,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlingShot
       objectReference: {fileID: 0}
+    - target: {fileID: 1808326464155593111, guid: a09857183a960ee46ae66e9c3743f31e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4692894216035678166, guid: a09857183a960ee46ae66e9c3743f31e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692894216035678166, guid: a09857183a960ee46ae66e9c3743f31e, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 6156498426944824473, guid: a09857183a960ee46ae66e9c3743f31e, type: 3}
       propertyPath: m_RootOrder
@@ -571,10 +574,6 @@ PrefabInstance:
     - target: {fileID: 6894713879646872425, guid: a09857183a960ee46ae66e9c3743f31e, type: 3}
       propertyPath: m_LocalPosition.z
       value: -15.62
-      objectReference: {fileID: 0}
-    - target: {fileID: 7217816976841880599, guid: a09857183a960ee46ae66e9c3743f31e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -17.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a09857183a960ee46ae66e9c3743f31e, type: 3}
