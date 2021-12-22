@@ -48,6 +48,14 @@ MonoBehaviour:
   - {fileID: 4516162485764532275, guid: 39d36505ebfe365418d2282fea9ebcbc, type: 3}
   - {fileID: 5402630846632120298, guid: c1d2850cf370abe41afd3d56db31a4e4, type: 3}
   - {fileID: 7282696728959297323, guid: 29cc555f66b4e3b4684b5a5dd7e5afc6, type: 3}
-  redSpawnPoint: {fileID: 0}
-  blueSpawnPoint: {fileID: 0}
+  redSpawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  blueSpawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   offset: {x: -0, y: -1.43, z: 1.61}

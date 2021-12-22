@@ -28,22 +28,6 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
-                },
-                {
-                    "name": "Fire",
-                    "type": "Button",
-                    "id": "13e4c19d-6806-405c-8b2b-601d340e6419",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Power",
-                    "type": "Button",
-                    "id": "20c6b55a-caae-471c-9ecf-fff080797908",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -123,28 +107,6 @@
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "bcef549b-9edc-4ef1-a9ea-6eebe057bf73",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "29f5cdfa-683a-4eec-af6e-f4918b0b0f22",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Power",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         },
@@ -170,6 +132,33 @@
                     "processors": "",
                     "groups": "",
                     "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "PowerControls",
+            "id": "d616b66d-41a7-47b3-9f26-58cda1468d80",
+            "actions": [
+                {
+                    "name": "ActivatePower",
+                    "type": "Button",
+                    "id": "52f76ad5-331d-45a6-b22e-0cee0e3be163",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "cb075aa5-fbfe-49f6-a802-f46dab1a17a0",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActivatePower",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -41,22 +41,6 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
-                },
-                {
-                    ""name"": ""Fire"",
-                    ""type"": ""Button"",
-                    ""id"": ""13e4c19d-6806-405c-8b2b-601d340e6419"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Power"",
-                    ""type"": ""Button"",
-                    ""id"": ""20c6b55a-caae-471c-9ecf-fff080797908"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -136,28 +120,6 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""bcef549b-9edc-4ef1-a9ea-6eebe057bf73"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""29f5cdfa-683a-4eec-af6e-f4918b0b0f22"",
-                    ""path"": ""<Keyboard>/r"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Power"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -187,6 +149,33 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""PowerControls"",
+            ""id"": ""d616b66d-41a7-47b3-9f26-58cda1468d80"",
+            ""actions"": [
+                {
+                    ""name"": ""ActivatePower"",
+                    ""type"": ""Button"",
+                    ""id"": ""52f76ad5-331d-45a6-b22e-0cee0e3be163"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""cb075aa5-fbfe-49f6-a802-f46dab1a17a0"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ActivatePower"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -196,11 +185,12 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         m_CharacterControls_Move = m_CharacterControls.FindAction("Move", throwIfNotFound: true);
         m_CharacterControls_Run = m_CharacterControls.FindAction("Run", throwIfNotFound: true);
         m_CharacterControls_Jump = m_CharacterControls.FindAction("Jump", throwIfNotFound: true);
-        m_CharacterControls_Fire = m_CharacterControls.FindAction("Fire", throwIfNotFound: true);
-        m_CharacterControls_Power = m_CharacterControls.FindAction("Power", throwIfNotFound: true);
         // Camera
         m_Camera = asset.FindActionMap("Camera", throwIfNotFound: true);
         m_Camera_Look = m_Camera.FindAction("Look", throwIfNotFound: true);
+        // PowerControls
+        m_PowerControls = asset.FindActionMap("PowerControls", throwIfNotFound: true);
+        m_PowerControls_ActivatePower = m_PowerControls.FindAction("ActivatePower", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -253,8 +243,6 @@ public class @PlayerInput : IInputActionCollection, IDisposable
     private readonly InputAction m_CharacterControls_Move;
     private readonly InputAction m_CharacterControls_Run;
     private readonly InputAction m_CharacterControls_Jump;
-    private readonly InputAction m_CharacterControls_Fire;
-    private readonly InputAction m_CharacterControls_Power;
     public struct CharacterControlsActions
     {
         private @PlayerInput m_Wrapper;
@@ -262,8 +250,6 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_CharacterControls_Move;
         public InputAction @Run => m_Wrapper.m_CharacterControls_Run;
         public InputAction @Jump => m_Wrapper.m_CharacterControls_Jump;
-        public InputAction @Fire => m_Wrapper.m_CharacterControls_Fire;
-        public InputAction @Power => m_Wrapper.m_CharacterControls_Power;
         public InputActionMap Get() { return m_Wrapper.m_CharacterControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -282,12 +268,6 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @Jump.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnJump;
-                @Fire.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnFire;
-                @Fire.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnFire;
-                @Fire.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnFire;
-                @Power.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnPower;
-                @Power.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnPower;
-                @Power.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnPower;
             }
             m_Wrapper.m_CharacterControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -301,12 +281,6 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
-                @Fire.started += instance.OnFire;
-                @Fire.performed += instance.OnFire;
-                @Fire.canceled += instance.OnFire;
-                @Power.started += instance.OnPower;
-                @Power.performed += instance.OnPower;
-                @Power.canceled += instance.OnPower;
             }
         }
     }
@@ -344,16 +318,51 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         }
     }
     public CameraActions @Camera => new CameraActions(this);
+
+    // PowerControls
+    private readonly InputActionMap m_PowerControls;
+    private IPowerControlsActions m_PowerControlsActionsCallbackInterface;
+    private readonly InputAction m_PowerControls_ActivatePower;
+    public struct PowerControlsActions
+    {
+        private @PlayerInput m_Wrapper;
+        public PowerControlsActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @ActivatePower => m_Wrapper.m_PowerControls_ActivatePower;
+        public InputActionMap Get() { return m_Wrapper.m_PowerControls; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PowerControlsActions set) { return set.Get(); }
+        public void SetCallbacks(IPowerControlsActions instance)
+        {
+            if (m_Wrapper.m_PowerControlsActionsCallbackInterface != null)
+            {
+                @ActivatePower.started -= m_Wrapper.m_PowerControlsActionsCallbackInterface.OnActivatePower;
+                @ActivatePower.performed -= m_Wrapper.m_PowerControlsActionsCallbackInterface.OnActivatePower;
+                @ActivatePower.canceled -= m_Wrapper.m_PowerControlsActionsCallbackInterface.OnActivatePower;
+            }
+            m_Wrapper.m_PowerControlsActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @ActivatePower.started += instance.OnActivatePower;
+                @ActivatePower.performed += instance.OnActivatePower;
+                @ActivatePower.canceled += instance.OnActivatePower;
+            }
+        }
+    }
+    public PowerControlsActions @PowerControls => new PowerControlsActions(this);
     public interface ICharacterControlsActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnFire(InputAction.CallbackContext context);
-        void OnPower(InputAction.CallbackContext context);
     }
     public interface ICameraActions
     {
         void OnLook(InputAction.CallbackContext context);
+    }
+    public interface IPowerControlsActions
+    {
+        void OnActivatePower(InputAction.CallbackContext context);
     }
 }

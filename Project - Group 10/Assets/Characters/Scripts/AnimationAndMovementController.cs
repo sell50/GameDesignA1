@@ -1,6 +1,5 @@
 using System;
 using Photon.Pun;
-using Photon.Pun.Demo.PunBasics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,7 +10,7 @@ namespace Characters.Scripts
         private PlayerInput _playerInput;
         private CharacterController _characterController;
         private Animator _animator;
-        private PhotonView _photonView;
+        // private PhotonView _photonView;
 
         private Vector2 _movementInput;
         private Vector3 _currentMovement;
@@ -44,7 +43,7 @@ namespace Characters.Scripts
             _playerInput = new PlayerInput();
             _characterController = GetComponent<CharacterController>();
             _animator = GetComponent<Animator>();
-            _photonView = GetComponent<PhotonView>();
+            // _photonView = GetComponent<PhotonView>();
 
             _isWalkingHash = Animator.StringToHash("isWalking");
             _isRunningHash = Animator.StringToHash("isRunning");
@@ -224,7 +223,7 @@ namespace Characters.Scripts
 
         private void OnEnable()
         {
-            if (_photonView.IsMine)
+            if (photonView.IsMine)
             {
                 _playerInput.CharacterControls.Enable();
             }
@@ -232,7 +231,10 @@ namespace Characters.Scripts
 
         private void OnDisable()
         {
-            _playerInput.CharacterControls.Disable();
+            if (photonView.IsMine)
+            {
+                _playerInput.CharacterControls.Disable();
+            }
         }
     }
 }

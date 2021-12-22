@@ -7,7 +7,7 @@ namespace Characters.Scripts
 {
     public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
     {
-        
+        private PlayerSpawner _playerSpawner;
         private bool isFiring;
 
         #region Public Fields
@@ -87,21 +87,9 @@ namespace Characters.Scripts
             if (photonView.IsMine)
             {
                 Camera.main.GetComponent<CameraFollow>().SetTarget(gameObject.transform);
+                _playerSpawner = GameObject.Find("PlayerSpawner").GetComponent<PlayerSpawner>();
             }
-            /*CameraWork _cameraWork = GetComponent<CameraWork>();
 
-            if (_cameraWork != null)
-            {
-                if (photonView.IsMine)
-                {
-                    _cameraWork.OnStartFollowing();
-                }
-            }
-            else
-            {
-                Debug.LogError("<Color=Red><a>Missing</a></Color> CameraWork Component on playerPrefab.", this);
-            }*/
-            
             UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
         }
         
@@ -118,6 +106,19 @@ namespace Characters.Scripts
                 {
                     //respawn at a point in the arena
                     //GameManager.Instance.LeaveRoom();
+                }
+            }
+        }
+
+        public void TakeDamage(int damage)
+        {
+            if (photonView.IsMine)
+            {
+                health -= damage;
+                if (health <= 0)
+                {
+                    _playerSpawner.Respawn();
+                    PhotonNetwork.Destroy(gameObject);
                 }
             }
         }

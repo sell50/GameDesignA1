@@ -1287,7 +1287,6 @@ GameObject:
   - component: {fileID: 5060755088312529598}
   - component: {fileID: 5060755088312529599}
   - component: {fileID: 5060755088312529592}
-  - component: {fileID: 5060755088312529593}
   m_Layer: 0
   m_Name: Ice Mage
   m_TagString: Untagged
@@ -1444,23 +1443,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
---- !u!114 &5060755088312529593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5402630846632120298}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd08475b23aa548b7b9d28397d430b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distance: 7
-  height: 3
-  centerOffset: {x: 0, y: 0, z: 0}
-  followOnStart: 0
-  smoothSpeed: 0.125
 --- !u!1 &5475567241912456379
 GameObject:
   m_ObjectHideFlags: 0
