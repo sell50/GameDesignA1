@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Characters.Scripts;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -84,9 +85,10 @@ public class SlingShot : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")        //choose appropriately
+        if (other.gameObject.CompareTag("Player"))        //choose appropriately
         {
             //reduce character health 1-2 damage    //Use collider in stone i.e currentPos
+            other.gameObject.GetComponent<PlayerManager>().TakeDamage(Random.Range(1, 2));
         }
     }
 }

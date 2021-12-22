@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Characters.Scripts;
 using UnityEngine;
 
 public class Bow_Arrow : MonoBehaviour
@@ -80,9 +81,10 @@ public class Bow_Arrow : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")        //choose appropriately
+        if (other.gameObject.CompareTag("Player"))        //choose appropriately
         {
             //reduce character health 6-9 damage     //Add collider in arrow i.e currentPos
+            other.gameObject.GetComponent<PlayerManager>().TakeDamage(Random.Range(6, 9));
         }
     }
 }

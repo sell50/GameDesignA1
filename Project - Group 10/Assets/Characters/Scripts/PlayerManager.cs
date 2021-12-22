@@ -63,14 +63,6 @@ namespace Characters.Scripts
             }
         }
 
-        private void OnTriggerStay(Collider other)
-        {
-            if (!photonView.IsMine)
-            {
-                
-            }
-        }
-
         private void Awake()
         {
             //photonView = gameObject.GetPhotonView();
@@ -86,28 +78,11 @@ namespace Characters.Scripts
         {
             if (photonView.IsMine)
             {
-                Camera.main.GetComponent<CameraFollow>().SetTarget(gameObject.transform);
+                if (Camera.main is { }) Camera.main.GetComponent<CameraFollow>().SetTarget(gameObject.transform);
                 _playerSpawner = GameObject.Find("PlayerSpawner").GetComponent<PlayerSpawner>();
             }
 
             UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
-        }
-        
-        void Update()
-        {
-            if (photonView.IsMine == false && PhotonNetwork.IsConnected)
-            {
-                return;
-            }
-            
-            if (photonView.IsMine)
-            {
-                if (health <= 0)
-                {
-                    //respawn at a point in the arena
-                    //GameManager.Instance.LeaveRoom();
-                }
-            }
         }
 
         public void TakeDamage(int damage)
