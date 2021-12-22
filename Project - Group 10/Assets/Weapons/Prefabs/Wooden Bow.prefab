@@ -764,6 +764,7 @@ MonoBehaviour:
   increments: 10
   drawFrom: {fileID: 4016874052134954700}
   drawTo: {fileID: 5082067344993535842}
+  anim: {fileID: 0}
 --- !u!1 &1793173729035202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,6 +1103,22 @@ Transform:
   m_Father: {fileID: 4620178347958848}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &542639235888087604
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8011442188414424453}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &8009839285208796937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1159,6 +1176,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5187dfa4d8f19524e8bbf7c6894b7de7, type: 3}
+--- !u!1 &8011442188414424453 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1959729250425484, guid: 5187dfa4d8f19524e8bbf7c6894b7de7, type: 3}
+  m_PrefabInstance: {fileID: 8009839285208796937}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8014350890135789561 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4534147065827568, guid: 5187dfa4d8f19524e8bbf7c6894b7de7, type: 3}
