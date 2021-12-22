@@ -16,25 +16,30 @@ public class Bow_Arrow : MonoBehaviour
     public ItemPickup count;
     public int ammoCount;
     float shotForce = 15;
+    public GameObject child;
     void Start()
     {
         count = new ItemPickup();
         ammoCount = count.GetAmmo();
         anim = GetComponent<Animator>();
+        child = transform.GetChild(0).gameObject;
     }
 
     void Update()
     {
+        
         if (ammoCount != 0)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 anim.SetBool("Aim", true);
+                child.SetActive(true);
                 currentPos = Instantiate(arrow, drawFrom.position, Quaternion.identity, transform);
                 Draw_Arrow(15);
                 StartCoroutine(Shoot());
             }
             else if (Input.GetMouseButtonUp(0)) anim.SetBool("Aim", false);
+  
         }
     }
 
@@ -46,6 +51,7 @@ public class Bow_Arrow : MonoBehaviour
         projectileRigidBody.isKinematic = false;
         projectileRigidBody.AddForce(transform.right * shotForce, ForceMode.Impulse);
         ammoCount--;
+        child.SetActive(false);
         yield return new WaitForSeconds(4);
 
     }

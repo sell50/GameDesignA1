@@ -437,6 +437,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8011442188414424453, guid: d03c4353fda446d4f8df56d422578d64, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d03c4353fda446d4f8df56d422578d64, type: 3}
 --- !u!1001 &1136959275
@@ -511,9 +515,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlingShot
       objectReference: {fileID: 0}
+    - target: {fileID: 1808326464155593111, guid: a09857183a960ee46ae66e9c3743f31e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4692894216035678166, guid: a09857183a960ee46ae66e9c3743f31e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692894216035678166, guid: a09857183a960ee46ae66e9c3743f31e, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 6156498426944824473, guid: a09857183a960ee46ae66e9c3743f31e, type: 3}
       propertyPath: m_RootOrder
@@ -563,10 +575,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -15.62
       objectReference: {fileID: 0}
-    - target: {fileID: 7217816976841880599, guid: a09857183a960ee46ae66e9c3743f31e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -17.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a09857183a960ee46ae66e9c3743f31e, type: 3}
 --- !u!1 &1822694509
@@ -584,7 +592,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1822694510
 Transform:
   m_ObjectHideFlags: 0

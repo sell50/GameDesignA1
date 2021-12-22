@@ -5,6 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - Base
+  - Wall
+  - Blue Spawnpoint
+  - Red Spawnpoint
+  - Railgun Pickup
+  - Shotgun Pickup
+  - Rocket Launcher Pickup
+  - Health Pickup
+  - Arrow
+  - Stone
   layers:
   - Default
   - TransparentFX

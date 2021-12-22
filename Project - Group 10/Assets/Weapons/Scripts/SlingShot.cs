@@ -18,19 +18,25 @@ public class SlingShot : MonoBehaviour
     public ItemPickup count;
     public int ammoCount;
 
+    public GameObject child;
+
     void Start()
     {
         count = new ItemPickup();
         ammoCount = count.GetAmmo();
+        child = transform.GetChild(0).gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if ( ammoCount != 0)
         {
+
             if (Input.GetMouseButtonDown(0))
             {
+                child.SetActive(true);
                 currentPos = Instantiate(projectile, drawFrom.position, Quaternion.identity, transform);
                 DrawProjectile(0.05f);
             }
@@ -47,6 +53,7 @@ public class SlingShot : MonoBehaviour
         projectileRigidBody.AddForce(transform.forward * shotForce, ForceMode.Impulse);
         slingString.centre = drawFrom;
         ammoCount--;
+        child.SetActive(false);
     }
     public void DrawProjectile(float speed)
     {
