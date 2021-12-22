@@ -5,11 +5,12 @@ using UnityEngine;
 public class PowerBurn : MonoBehaviour
 {
     int abilityCooldown;
-    int isActive;
+    bool isActive;
     // Start is called before the first frame update
     void Start()
     {
-        
+        abilityCooldown = 0;
+        isActive = false;
     }
 
     // Update is called once per frame
@@ -17,7 +18,15 @@ public class PowerBurn : MonoBehaviour
     {
         if(Input.GetKeyDown("o")) //key for ability activate
         {
-            //power goes here
+            isActive = true;
+            abilityCooldown = 12;
+            //ability goes here           
+        }
+
+        while(abilityCooldown>0)
+        {
+            abilityCooldown--;
         }
     }
+
 }
