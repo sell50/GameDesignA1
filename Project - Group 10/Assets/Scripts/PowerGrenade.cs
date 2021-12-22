@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PowerGrenade : MonoBehaviour
 {
-    int abilityCooldown;
-    bool isActive;
+    public int abilityCooldown;
+    public bool isActive;
+    public GameObject projectile;
+    public float launchVelocity = 700f;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,12 +22,22 @@ public class PowerGrenade : MonoBehaviour
         {
             isActive = true;
             abilityCooldown = 10;
-            //ability goes here
+            GameObject grenade = Instantiate(projectile, transform.position,  
+                                                     transform.rotation);
+            grenade.GetComponent<Rigidbody>().AddRelativeForce(new Vector3 
+                                                (0, launchVelocity,0));
+            StartCoroutine(Cooldown());
         }
 
+    }
+
+     IEnumerator Cooldown()
+    {
         while(abilityCooldown>0)
         {
             abilityCooldown--;
+            yield return new WaitForSeconds(1);
         }
     }
+
 }

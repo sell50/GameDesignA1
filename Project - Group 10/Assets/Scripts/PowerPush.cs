@@ -22,10 +22,15 @@ public class PowerPush : MonoBehaviour
             abilityCooldown = 12;
             //ability goes here
         }
+        StartCoroutine(Cooldown());
+    }
 
+     IEnumerator Cooldown()
+    {
         while(abilityCooldown>0)
         {
             abilityCooldown--;
+            yield return new WaitForSeconds(1);
         }
     }
 
