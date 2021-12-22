@@ -1,0 +1,33 @@
+{
+    "name": "Weapon_Input",
+    "maps": [
+        {
+            "name": "WeaponControl",
+            "id": "c44faadc-d26b-403f-afaf-61f0a0f76862",
+            "actions": [
+                {
+                    "name": "SlingLaunch",
+                    "type": "Button",
+                    "id": "e4516f4c-368d-41bb-9211-4de0116b2c68",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a2f40703-ede4-4187-90c4-cd329a10f166",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SlingLaunch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
