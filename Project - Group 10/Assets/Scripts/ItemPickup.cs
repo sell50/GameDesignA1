@@ -25,5 +25,8 @@ public class ItemPickup : MonoBehaviour
         }
     }
 
-    
+    public int GetAmmo()
+    {
+        return ammo;
+    }
 }
