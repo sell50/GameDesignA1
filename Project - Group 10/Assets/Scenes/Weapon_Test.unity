@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sword1_Gold
       objectReference: {fileID: 0}
+    - target: {fileID: 8449004803641222730, guid: 283dced21787f2549a3092b952a9fcfa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9082412130131180784, guid: 283dced21787f2549a3092b952a9fcfa, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -493,6 +497,10 @@ PrefabInstance:
     - target: {fileID: 9190878331159525150, guid: 452a1ef0aca62394d9145df92353b522, type: 3}
       propertyPath: m_Name
       value: Dagger
+      objectReference: {fileID: 0}
+    - target: {fileID: 9190878331159525150, guid: 452a1ef0aca62394d9145df92353b522, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 452a1ef0aca62394d9145df92353b522, type: 3}
