@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4483761650849849073}
   - component: {fileID: 2035148172027314116}
   - component: {fileID: 4088952277050002086}
+  - component: {fileID: 3217304447113741588}
   m_Layer: 0
   m_Name: RedFlag
   m_TagString: Untagged
@@ -76,6 +77,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3217304447113741588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4483761650849849074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd03ff570f75d9f4da9070568ba7810b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redPoints: 0
+  bluePoints: 0
 --- !u!1 &4483761650970739902
 GameObject:
   m_ObjectHideFlags: 0

@@ -52202,7 +52202,7 @@ GameObject:
   - component: {fileID: 8765708734666245879}
   m_Layer: 0
   m_Name: Base Blue
-  m_TagString: Base
+  m_TagString: BlueBase
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104670,7 +104670,7 @@ GameObject:
   - component: {fileID: 8765708735568390718}
   m_Layer: 0
   m_Name: Base Red
-  m_TagString: Base
+  m_TagString: RedBase
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
