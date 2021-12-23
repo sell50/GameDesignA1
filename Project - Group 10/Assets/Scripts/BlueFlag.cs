@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace ScoreSystem
 {
-    public class Flag : BasicScoreSystem
+    public class BlueFlag : BasicScoreSystem
     {
         void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "Base")
+            if (other.tag == "RedBase")
             {
-                Score();
+                BlueScore();
             }
         }
 

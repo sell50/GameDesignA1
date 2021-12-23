@@ -2,18 +2,31 @@ using UnityEngine;
 
 namespace ScoreSystem
 {
-    public class BasicScoreSystem
+    public class BasicScoreSystem: MonoBehaviour
     {
-        public int TeamPoints;
-        
-        public void Score()
+        public int redPoints;
+        public int bluePoints;
+
+
+
+        public void RedScore()
         {
-            TeamPoints+=1; 
+            redPoints += 1;
         }
 
-        public int GetTotalPoints()
+        public int GetTotalRedPoints()
         {
-            return TeamPoints;
+            return redPoints;
+        }
+
+        public void BlueScore()
+        {
+            bluePoints += 1;
+        }
+
+        public int GetTotalBluePoints()
+        {
+            return bluePoints;
         }
 
     }

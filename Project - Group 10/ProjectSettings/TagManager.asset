@@ -4,7 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Base
   - Wall
   - Blue Spawnpoint
   - Red Spawnpoint
@@ -16,6 +15,9 @@ TagManager:
   - Stone
   - BlueFlag
   - RedFlag
+  - BlueBase
+  - Base
+  - RedBase
   layers:
   - Default
   - TransparentFX

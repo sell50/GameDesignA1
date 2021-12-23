@@ -10,7 +10,8 @@ public class Ending_Screen : MonoBehaviour
 
     public void DisplayScore()                                              //Call after game ends to display score
     {
-        score.text = "Score: " + points.GetTotalPoints().ToString();
+        score.text = "Red Score: " + points.GetTotalRedPoints().ToString();
+        score.text = "Blue Score: " + points.GetTotalBluePoints().ToString();
     }
 
     public void PlayAgain()
