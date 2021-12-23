@@ -8,19 +8,22 @@ using Random = UnityEngine.Random;
 public class PlayerSpawner : MonoBehaviour
 {
     public GameObject[] playerPrefabs;
-    public Transform[] redSpawnPoints;
-    public Transform[] blueSpawnPoints;
-    
+    public Transform[] firstArenaRedSpawnPoints;
+    public Transform[] firstArenaBlueSpawnPoints;
+    public Transform[] secondArenaRedSpawnPoints;
+    public Transform[] secondArenaBlueSpawnPoints;
+
     [Header("Camera")]
     [Tooltip("How far back the camera should be from the player")]
     public Vector3 offset;
     
     private GameObject player;
     private GameObject camera;
+    private bool switchedArenas = false;
 
     void Start()
     {
-        var spawnedPlayer = Spawn();
+        var spawnedPlayer = Spawn(firstArenaRedSpawnPoints, firstArenaBlueSpawnPoints);
 
         AttachCamera(spawnedPlayer);
     }
@@ -35,7 +38,7 @@ public class PlayerSpawner : MonoBehaviour
         }
     }
 
-    private GameObject Spawn()
+    private GameObject Spawn(Transform[] redSpawnPoints, Transform[] blueSpawnPoints)
     {
         var playerToSpawn = playerPrefabs[(int) PhotonNetwork.LocalPlayer.CustomProperties["playerClass"]];
         var team = (int) PhotonNetwork.LocalPlayer.CustomProperties["playerTeam"];
@@ -66,7 +69,16 @@ public class PlayerSpawner : MonoBehaviour
 
     public void Respawn()
     {
-        var spawnedPlayer = Spawn();
+        GameObject spawnedPlayer;
+        if (!switchedArenas)
+        { 
+            spawnedPlayer = Spawn(firstArenaRedSpawnPoints, firstArenaBlueSpawnPoints);
+        }
+        else
+        {
+            spawnedPlayer = Spawn(secondArenaRedSpawnPoints, secondArenaBlueSpawnPoints);
+        }
+        
         AttachCamera(spawnedPlayer);
     }
     

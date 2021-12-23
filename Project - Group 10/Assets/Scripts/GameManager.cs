@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Characters.Scripts;
 using TMPro;
 using UnityEngine;
 
@@ -12,7 +13,12 @@ public class GameManager : MonoBehaviour
 
     public GameObject scoresPanel;
     public TMP_Text redScoreText;
-    public TMP_Text blueScoreText; 
+    public TMP_Text blueScoreText;
+
+    public GameObject firstArena;
+    public GameObject secondArena;
+
+    private PlayerSpawner _spawner;
 
     private void Awake()
     {
@@ -26,6 +32,11 @@ public class GameManager : MonoBehaviour
     
     void Update()
     {
+        if (redTeamScore >= 10 || blueTeamScore >= 10)
+        {
+            //switch to new arena - respawn all the players there
+            
+        }
         
     }
 }
