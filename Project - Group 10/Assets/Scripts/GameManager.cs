@@ -8,8 +8,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [HideInInspector] public int redTeamScore;
-    [HideInInspector] public int blueTeamScore;
+    private int redTeamScore;
+    private int blueTeamScore;
     public static GameManager instance;
 
     public GameObject scoresPanel;
@@ -27,14 +27,9 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
-    void Start()
-    {
-        
-    }
-    
     void Update()
     {
-        if (redTeamScore >= 10 || blueTeamScore >= 10)
+        if (scoreSystem.GetTotalRedPoints() >= 10 || scoreSystem.GetTotalBluePoints() >= 10)
         {
             //switch to new arena - respawn all the players there
             firstArena.SetActive(false);

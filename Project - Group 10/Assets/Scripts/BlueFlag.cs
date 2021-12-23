@@ -11,6 +11,8 @@ namespace ScoreSystem
             if (other.tag == "RedBase")
             {
                 BlueScore();
+                other.transform.parent = null;
+                other.transform.position = GameObject.FindWithTag("BlueBase").transform.position;
             }
         }
 

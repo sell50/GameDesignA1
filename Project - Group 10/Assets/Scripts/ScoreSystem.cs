@@ -4,8 +4,8 @@ namespace ScoreSystem
 {
     public class BasicScoreSystem: MonoBehaviour
     {
-        public int redPoints;
-        public int bluePoints;
+        private int redPoints;
+        private int bluePoints;
 
 
 

@@ -1442,6 +1442,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FreeCTFv2
       objectReference: {fileID: 0}
+    - target: {fileID: 5375091027054026426, guid: 69efe55acc50d2847a0d9bd082e586be, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5375091027119378064, guid: 69efe55acc50d2847a0d9bd082e586be, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -3604,6 +3608,7 @@ MonoBehaviour:
   blueScoreText: {fileID: 436304488}
   firstArena: {fileID: 336684976}
   secondArena: {fileID: 504961829}
+  scoreSystem: {fileID: 0}
 --- !u!4 &1567750874
 Transform:
   m_ObjectHideFlags: 0

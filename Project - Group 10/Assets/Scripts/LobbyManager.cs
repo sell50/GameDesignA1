@@ -20,7 +20,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     private List<RoomItem> _roomItemsList = new List<RoomItem>();
     public Transform contentObject;
     
-    [HideInInspector]public List<PlayerItem> playerItemsList = new List<PlayerItem>();
+    public List<PlayerItem> playerItemsList = new List<PlayerItem>();
     public PlayerItem playerItemPrefab;
     public Transform playerItemParent;
 
@@ -134,11 +134,11 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public void UpdatePlayerList()
     {
-        foreach (var playerItem in playerItemsList)
+        /*foreach (var playerItem in playerItemsList)
         {
             Destroy(playerItem.gameObject);
         }
-        playerItemsList.Clear();
+        playerItemsList.Clear();*/
 
         if (PhotonNetwork.CurrentRoom == null)
         {
@@ -147,7 +147,40 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
         foreach (var player in PhotonNetwork.CurrentRoom.Players)
         {
-            var newPlayerItem = Instantiate(playerItemPrefab, playerItemParent);
+            switch (player.Key)
+            {
+                case 1:
+                    playerItemsList[0].SetPlayerInfo(player.Value);
+                    if (player.Value.Equals(PhotonNetwork.LocalPlayer))
+                    {
+                        playerItemsList[0].ApplyLocalChanges();
+                    }
+                    break;
+                case 2:
+                    playerItemsList[1].SetPlayerInfo(player.Value);
+                    if (player.Value.Equals(PhotonNetwork.LocalPlayer))
+                    {
+                        playerItemsList[1].ApplyLocalChanges();
+                    }
+                    break;
+                case 3:
+                    playerItemsList[2].SetPlayerInfo(player.Value);
+                    if (player.Value.Equals(PhotonNetwork.LocalPlayer))
+                    {
+                        playerItemsList[2].ApplyLocalChanges();
+                    }
+                    break;
+                case 4:
+                    playerItemsList[3].SetPlayerInfo(player.Value);
+                    if (player.Value.Equals(PhotonNetwork.LocalPlayer))
+                    {
+                        playerItemsList[3].ApplyLocalChanges();
+                    }
+                    break;
+                    
+            }
+            
+            /*var newPlayerItem = Instantiate(playerItemPrefab, playerItemParent);
             newPlayerItem.SetPlayerInfo(player.Value);
 
             if (player.Value.Equals(PhotonNetwork.LocalPlayer))
@@ -155,7 +188,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
                 newPlayerItem.ApplyLocalChanges();
             }
             
-            playerItemsList.Add(newPlayerItem);
+            playerItemsList.Add(newPlayerItem);*/
         }
     }
 }
