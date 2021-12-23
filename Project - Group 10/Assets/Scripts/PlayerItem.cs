@@ -32,7 +32,7 @@ public class PlayerItem : MonoBehaviourPunCallbacks
     private bool _slingshotChosen;
 
     private Hashtable playerProperties = new Hashtable();
-    private Player _player;
+    private Player _player = null;
    
     public void SetPlayerInfo(Player player)
     {
@@ -162,10 +162,12 @@ public class PlayerItem : MonoBehaviourPunCallbacks
         {
             UpdatePlayerItem(targetPlayer);
         }
+        
     }
     
     private void UpdatePlayerItem(Player player)
     {
+        SetPlayerInfo(player);
         if (player.CustomProperties.ContainsKey("playerClass"))
         {
             switch (player.CustomProperties["playerClass"])

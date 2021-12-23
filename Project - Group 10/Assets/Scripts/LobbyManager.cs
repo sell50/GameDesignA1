@@ -23,6 +23,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public List<PlayerItem> playerItemsList = new List<PlayerItem>();
     public PlayerItem playerItemPrefab;
     public Transform playerItemParent;
+    public List<Transform> playerItemPositions = new List<Transform>();
 
     public float timeBetweenUpdates = 1.5f;
     private float _nextUpdateTime; 
@@ -134,11 +135,11 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public void UpdatePlayerList()
     {
-        /*foreach (var playerItem in playerItemsList)
+        foreach (var playerItem in playerItemsList)
         {
             Destroy(playerItem.gameObject);
         }
-        playerItemsList.Clear();*/
+        playerItemsList.Clear();
 
         if (PhotonNetwork.CurrentRoom == null)
         {
@@ -150,45 +151,38 @@ public class LobbyManager : MonoBehaviourPunCallbacks
             switch (player.Key)
             {
                 case 1:
-                    playerItemsList[0].SetPlayerInfo(player.Value);
+                    var newPlayerItem = Instantiate(playerItemPrefab, playerItemPositions[0]);
+                    newPlayerItem.GetComponent<PlayerItem>().SetPlayerInfo(player.Value);
                     if (player.Value.Equals(PhotonNetwork.LocalPlayer))
                     {
-                        playerItemsList[0].ApplyLocalChanges();
+                        newPlayerItem.GetComponent<PlayerItem>().ApplyLocalChanges();
                     }
                     break;
                 case 2:
-                    playerItemsList[1].SetPlayerInfo(player.Value);
+                    var newPlayerItem2 = Instantiate(playerItemPrefab, playerItemPositions[1]);
+                    newPlayerItem2.GetComponent<PlayerItem>().SetPlayerInfo(player.Value);
                     if (player.Value.Equals(PhotonNetwork.LocalPlayer))
                     {
-                        playerItemsList[1].ApplyLocalChanges();
+                        newPlayerItem2.GetComponent<PlayerItem>().ApplyLocalChanges();
                     }
                     break;
                 case 3:
-                    playerItemsList[2].SetPlayerInfo(player.Value);
+                    var newPlayerItem3 = Instantiate(playerItemPrefab, playerItemPositions[2]);
+                    newPlayerItem3.GetComponent<PlayerItem>().SetPlayerInfo(player.Value);
                     if (player.Value.Equals(PhotonNetwork.LocalPlayer))
                     {
-                        playerItemsList[2].ApplyLocalChanges();
+                        newPlayerItem3.GetComponent<PlayerItem>().ApplyLocalChanges();
                     }
                     break;
                 case 4:
-                    playerItemsList[3].SetPlayerInfo(player.Value);
+                    var newPlayerItem4 = Instantiate(playerItemPrefab, playerItemPositions[3]);
+                    newPlayerItem4.GetComponent<PlayerItem>().SetPlayerInfo(player.Value);
                     if (player.Value.Equals(PhotonNetwork.LocalPlayer))
                     {
-                        playerItemsList[3].ApplyLocalChanges();
+                        newPlayerItem4.GetComponent<PlayerItem>().ApplyLocalChanges();
                     }
                     break;
-                    
             }
-            
-            /*var newPlayerItem = Instantiate(playerItemPrefab, playerItemParent);
-            newPlayerItem.SetPlayerInfo(player.Value);
-
-            if (player.Value.Equals(PhotonNetwork.LocalPlayer))
-            {
-                newPlayerItem.ApplyLocalChanges();
-            }
-            
-            playerItemsList.Add(newPlayerItem);*/
         }
     }
 }
