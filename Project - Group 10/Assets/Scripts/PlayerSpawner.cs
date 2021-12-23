@@ -67,6 +67,12 @@ public class PlayerSpawner : MonoBehaviour
         }
     }
 
+    public void SetSwitchedArenas(bool arenaSwitch)
+    {
+        switchedArenas = arenaSwitch;
+    }
+    
+
     public void Respawn()
     {
         GameObject spawnedPlayer;
